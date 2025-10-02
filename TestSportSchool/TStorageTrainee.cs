@@ -32,6 +32,7 @@ namespace TestSportSchool
             var actualResult = testTrainee.AddTrainee(testValidTrainee);
 
             Assert.AreEqual("Ученик успешно добавлен", actualResult, "При успешном добавлении возвращается: Ученик успешно добавлен");
+            mockRep.Verify(r => r.AddTrainee(testValidTrainee), Times.Once);
         }
     }
 }
