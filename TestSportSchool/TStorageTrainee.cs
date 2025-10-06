@@ -97,5 +97,27 @@ namespace TestSportSchool
             Assert.AreEqual("Выберите одну из существующих секций", actualResult);
             mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
         }
+        [TestMethod]
+        public void TestAddTrainee_InvalidCategory()
+        {
+            var mockRep = new Mock<IStorageTrainee>();
+            var testTrainee = new TraineeDBManager(mockRep.Object);
+
+            var testValidTrainee = new Trainee
+            {
+                Id_Trainee = 1,
+                FIO = "Петров Пётр Петрович",
+                Birthday = new DateTime(1999, 1, 1),
+                Section = section.Спортивный_туризм,
+                Category = (category)3452443,
+                FIOParent = "Петров Пётр Николаевич",
+                PhoneNumberParent = "88005553535"
+            };
+
+            var actualResult = testTrainee.AddTrainee(testValidTrainee);
+
+            Assert.AreEqual("Выберите один из существующих разрядов", actualResult);
+            mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
+        }
     }
 }
