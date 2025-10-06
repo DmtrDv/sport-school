@@ -9,16 +9,10 @@ namespace SportSchoolLib
     public class TraineeDBManager
     {
         private IStorageTrainee storage_;
-        private List<Trainee> trainees_;
 
-        public TraineeDBManager()
-        {
-            trainees_ = new List<Trainee>();
-        }
         public TraineeDBManager(IStorageTrainee storage)
         {
             storage_ = storage;
-            trainees_ = new List<Trainee>();
         }
         public string AddTrainee(Trainee trainee)
         {
