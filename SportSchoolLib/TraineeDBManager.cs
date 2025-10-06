@@ -16,10 +16,10 @@ namespace SportSchoolLib
         }
         public string AddTrainee(Trainee trainee)
         {
-            if (string.IsNullOrEmpty(trainee.FIO))
+            /*if (string.IsNullOrEmpty(trainee.FIO))
             {
                 return "Введите ФИО ученика";
-            }
+            }*/
             if (storage_ != null)
             {
                 if (storage_.Id_TraineeExists(trainee.Id_Trainee))

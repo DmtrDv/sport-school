@@ -8,8 +8,6 @@ namespace TestSportSchool
     [TestClass]
     public class TStorageTrainee
     {
-        private IStorageTrainee _storageTrainee;
-        private Trainee _testTrainee;
         [TestMethod]
         public void TestAddTrainee_validData()
         {
@@ -34,5 +32,27 @@ namespace TestSportSchool
             Assert.AreEqual("Ученик успешно добавлен", actualResult, "При успешном добавлении возвращается: Ученик успешно добавлен");
             mockRep.Verify(r => r.AddTrainee(testValidTrainee), Times.Once);
         }
+        [TestMethod]
+        public void TestAddTrainee_emptyFIO()
+        {
+            var mockRep = new Mock<IStorageTrainee>();
+            var testTrainee = new TraineeDBManager(mockRep.Object);
+
+            var testEmptyFIO = new Trainee
+            {
+                Id_Trainee = 1,
+                FIO = "",
+                Birthday = new DateTime(1999, 1, 1),
+                Section = section.Спортивный_туризм,
+                Category = category.I_юношеский_спортивный_разряд,
+                FIOParent = "Петров Пётр Николаевич",
+                PhoneNumberParent = "88005553535"
+            };
+
+            var actualResult = testTrainee.AddTrainee(testEmptyFIO);
+            Assert.AreEqual("Введите ФИО ученика", actualResult);
+            mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
+        }
+        
     }
 }
