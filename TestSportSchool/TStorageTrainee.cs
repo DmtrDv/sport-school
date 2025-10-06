@@ -75,5 +75,27 @@ namespace TestSportSchool
             Assert.AreEqual("Введите правильную дату", actualResult);
             mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
         }
+        [TestMethod]
+        public void TestAddTrainee_InvalidSection()
+        {
+            var mockRep = new Mock<IStorageTrainee>();
+            var testTrainee = new TraineeDBManager(mockRep.Object);
+
+            var testBirthdayInvalid = new Trainee
+            {
+                Id_Trainee = 1,
+                FIO = "Петров Пётр Петрович",
+                Birthday = new DateTime(1999, 12, 1),
+                Section = (section)1123456543,
+                Category = category.I_юношеский_спортивный_разряд,
+                FIOParent = "Петров Пётр Николаевич",
+                PhoneNumberParent = "88005553535"
+            };
+
+            var actualResult = testTrainee.AddTrainee(testBirthdayInvalid);
+
+            Assert.AreEqual("Выберите одну из существующих секций", actualResult);
+            mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
+        }
     }
 }
