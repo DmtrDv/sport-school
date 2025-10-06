@@ -163,5 +163,29 @@ namespace TestSportSchool
             Assert.AreEqual("Введите номер телефона родителя", actualResult);
             mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
         }
+        [TestMethod]
+        public void TestAddTrainee_ExistingID()
+        {
+            var mockRep = new Mock<IStorageTrainee>();
+            var testTrainee = new TraineeDBManager(mockRep.Object);
+
+            var testValidTrainee = new Trainee
+            {
+                Id_Trainee = 1,
+                FIO = "Петров Пётр Петрович",
+                Birthday = new DateTime(1999, 1, 1),
+                Section = section.Спортивный_туризм,
+                Category = category.I_юношеский_спортивный_разряд,
+                FIOParent = "Петров Пётр Николаевич",
+                PhoneNumberParent = "88005553535"
+            };
+
+            mockRep.Setup(r => r.Id_TraineeExists(1))
+                   .Returns(true);
+            var actualResult = testTrainee.AddTrainee(testValidTrainee);
+
+            Assert.AreEqual("Такой ID ученика уже существует", actualResult);
+            mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
+        }
     }
 }
