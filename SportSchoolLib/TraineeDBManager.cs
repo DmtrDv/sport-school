@@ -24,6 +24,14 @@ namespace SportSchoolLib
             {
                 return "Введите правильную дату";
             }
+            if (!Enum.IsDefined(typeof(section), trainee.Section))
+            {
+                return "Выберите одну из существующих секций";
+            }
+            if (!Enum.IsDefined(typeof(category), trainee.Category))
+            {
+                return "Выберите один из существующих разрядов";
+            }
             
             if (storage_ != null)
             {
