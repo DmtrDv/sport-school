@@ -67,6 +67,47 @@ namespace TestSportSchool
             var mockRep = new Mock<IStorageTrainee>();
             var testTrainee = new TraineeDBManager(mockRep.Object);
 
+            var firstTrainee = new Trainee
+            {
+                Id_Trainee = 1,
+                FIO = "Петров Пётр Петрович",
+                Birthday = new DateTime(1999, 1, 1),
+                Section = section.Спортивный_туризм,
+                Category = category.I_юношеский_спортивный_разряд,
+                FIOParent = "Петров Пётр Николаевич",
+                PhoneNumberParent = "88005553535"
+            };
+
+            var duplicateTrainee = new Trainee
+            {
+                Id_Trainee = 1,
+                FIO = "Иванов Иван Иванович",
+                Birthday = new DateTime(2000, 2, 2),
+                Section = section.Спортивный_туризм,
+                Category = category.II_юношеский_спортивный_разряд,
+                FIOParent = "Иванов Иван Николаевич",
+                PhoneNumberParent = "88005553536"
+            };
+
+            bool idExists = false;
+            mockRep.Setup(r => r.Id_TraineeExists(1))
+                   .Returns(() => idExists)
+                   .Callback(() => idExists = true);
+
+            mockRep.Setup(r => r.AddTrainee(It.IsAny<Trainee>())/*r => r.Id_TraineeExists(1)*/);
+
+
+            var firstResult = testTrainee.AddTrainee(firstTrainee);
+            var actualResult = testTrainee.AddTrainee(duplicateTrainee);
+
+            Assert.AreEqual("Такой ID ученика уже существует", actualResult);
+
+            mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Once);
+            mockRep.Verify(r => r.Id_TraineeExists(1), Times.Exactly(2));
+
+            /*var mockRep = new Mock<IStorageTrainee>();
+            var testTrainee = new TraineeDBManager(mockRep.Object);
+
             var testValidTrainee = new Trainee
             {
                 Id_Trainee = 1,
@@ -83,7 +124,7 @@ namespace TestSportSchool
             var actualResult = testTrainee.AddTrainee(testValidTrainee);
 
             Assert.AreEqual("Такой ID ученика уже существует", actualResult);
-            mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
+            mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);*/
         }
     }
 }
