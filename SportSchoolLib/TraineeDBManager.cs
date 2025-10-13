@@ -32,7 +32,14 @@ namespace SportSchoolLib
             {
                 return "Выберите один из существующих разрядов";
             }
-            
+            if (string.IsNullOrEmpty(trainee.FIOParent))
+            {
+                return "Введите ФИО родителя";
+            }
+            if (string.IsNullOrEmpty(trainee.PhoneNumberParent))
+            {
+                return "Введите номер телефона родителя";
+            }
             if (storage_ != null)
             {
                 if (storage_.Id_TraineeExists(trainee.Id_Trainee))
