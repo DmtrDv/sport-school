@@ -9,16 +9,10 @@ namespace SportSchoolLib
     public class TraineeDBManager
     {
         private IStorageTrainee storage_;
-        private List<Trainee> trainees_;
 
-        public TraineeDBManager()
-        {
-            trainees_ = new List<Trainee>();
-        }
         public TraineeDBManager(IStorageTrainee storage)
         {
             storage_ = storage;
-            trainees_ = new List<Trainee>();
         }
         public string AddTrainee(Trainee trainee)
         {
@@ -26,11 +20,16 @@ namespace SportSchoolLib
             {
                 return "Введите ФИО ученика";
             }
+            if(trainee.Birthday.Month >12)
+            {
+                return "Введите правильную дату";
+            }
+            
             if (storage_ != null)
             {
                 if (storage_.Id_TraineeExists(trainee.Id_Trainee))
                 {
-                    return $"Ученик с ID ^{trainee.Id_Trainee}^ уже существует";
+                    return "Такой ID ученика уже существует";
                 }
                 storage_.AddTrainee(trainee);
             }
