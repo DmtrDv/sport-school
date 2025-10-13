@@ -33,136 +33,34 @@ namespace TestSportSchool
             mockRep.Verify(r => r.AddTrainee(testValidTrainee), Times.Once);
         }
         [TestMethod]
-        public void TestAddTrainee_emptyFIO()
+        [DataRow("", 1999,01,01, section.Спортивный_туризм, category.I_юношеский_спортивный_разряд, "Петров Пётр Николаевич", "88005553535", "Введите ФИО ученика")]
+        [DataRow("Петров Пётр Петрович", 1999, 13, 01, section.Спортивный_туризм, category.I_юношеский_спортивный_разряд, "Петров Пётр Николаевич", "88005553535", "Введите правильную дату")]
+        [DataRow("Петров Пётр Петрович", 1999, 01, 01, (section)1123456543, category.I_юношеский_спортивный_разряд, "Петров Пётр Николаевич", "88005553535", "Выберите одну из существующих секций")]
+        [DataRow("Петров Пётр Петрович", 1999, 01, 01, section.Спортивный_туризм, (category)3452443, "Петров Пётр Николаевич", "88005553535", "Выберите один из существующих разрядов")]
+        [DataRow("Петров Пётр Петрович", 1999, 01, 01, section.Спортивный_туризм, category.I_юношеский_спортивный_разряд, "", "88005553535", "Введите ФИО родителя")]
+        [DataRow("Петров Пётр Петрович", 1999, 01, 01, section.Спортивный_туризм, category.I_юношеский_спортивный_разряд, "Петров Пётр Николаевич", "", "Введите номер телефона родителя")]
+        public void TestAddTrainee_invalidData(string fio, int year, int month, int day, section section, category category,
+                                               string fioParent, string phoneNumberParent, string expectedError)
         {
             var mockRep = new Mock<IStorageTrainee>();
             var testTrainee = new TraineeDBManager(mockRep.Object);
-
-            var testEmptyFIO = new Trainee
+            var testTraineeData = new Trainee
             {
                 Id_Trainee = 1,
-                FIO = "",
-                Birthday = new DateTime(1999, 1, 1),
-                Section = section.Спортивный_туризм,
-                Category = category.I_юношеский_спортивный_разряд,
-                FIOParent = "Петров Пётр Николаевич",
-                PhoneNumberParent = "88005553535"
+                FIO = fio,
+                Birthday = new DateTime(year, month, day),
+                Section = section,
+                Category = category,
+                FIOParent = fioParent,
+                PhoneNumberParent = phoneNumberParent
             };
 
-            var actualResult = testTrainee.AddTrainee(testEmptyFIO);
-            Assert.AreEqual("Введите ФИО ученика", actualResult);
+            var actualResult = testTrainee.AddTrainee(testTraineeData);
+            Assert.AreEqual(expectedError, actualResult);
             mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
         }
-        [TestMethod]
-        public void TestAddTrainee_InvalidBirthday()
-        {
-            var mockRep = new Mock<IStorageTrainee>();
-            var testTrainee = new TraineeDBManager(mockRep.Object);
 
-            var testBirthdayInvalid = new Trainee
-            {
-                Id_Trainee = 1,
-                FIO = "Петров Пётр Петрович",
-                Birthday = new DateTime(1999, 13, 1),
-                Section = section.Спортивный_туризм,
-                Category = category.I_юношеский_спортивный_разряд,
-                FIOParent = "Петров Пётр Николаевич",
-                PhoneNumberParent = "88005553535"
-            };
-
-            var actualResult = testTrainee.AddTrainee(testBirthdayInvalid);
-
-            Assert.AreEqual("Введите правильную дату", actualResult);
-            mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
-        }
-        [TestMethod]
-        public void TestAddTrainee_InvalidSection()
-        {
-            var mockRep = new Mock<IStorageTrainee>();
-            var testTrainee = new TraineeDBManager(mockRep.Object);
-
-            var testBirthdayInvalid = new Trainee
-            {
-                Id_Trainee = 1,
-                FIO = "Петров Пётр Петрович",
-                Birthday = new DateTime(1999, 12, 1),
-                Section = (section)1123456543,
-                Category = category.I_юношеский_спортивный_разряд,
-                FIOParent = "Петров Пётр Николаевич",
-                PhoneNumberParent = "88005553535"
-            };
-
-            var actualResult = testTrainee.AddTrainee(testBirthdayInvalid);
-
-            Assert.AreEqual("Выберите одну из существующих секций", actualResult);
-            mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
-        }
-        [TestMethod]
-        public void TestAddTrainee_InvalidCategory()
-        {
-            var mockRep = new Mock<IStorageTrainee>();
-            var testTrainee = new TraineeDBManager(mockRep.Object);
-
-            var testValidTrainee = new Trainee
-            {
-                Id_Trainee = 1,
-                FIO = "Петров Пётр Петрович",
-                Birthday = new DateTime(1999, 1, 1),
-                Section = section.Спортивный_туризм,
-                Category = (category)3452443,
-                FIOParent = "Петров Пётр Николаевич",
-                PhoneNumberParent = "88005553535"
-            };
-
-            var actualResult = testTrainee.AddTrainee(testValidTrainee);
-
-            Assert.AreEqual("Выберите один из существующих разрядов", actualResult);
-            mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
-        }
-        [TestMethod]
-        public void TestAddTrainee_emptyFIOParent()
-        {
-            var mockRep = new Mock<IStorageTrainee>();
-            var testTrainee = new TraineeDBManager(mockRep.Object);
-
-            var testValidTrainee = new Trainee
-            {
-                Id_Trainee = 1,
-                FIO = "Петров Пётр Петрович",
-                Birthday = new DateTime(1999, 1, 1),
-                Section = section.Спортивный_туризм,
-                Category = category.I_юношеский_спортивный_разряд,
-                FIOParent = "",
-                PhoneNumberParent = "88005553535"
-            };
-
-            var actualResult = testTrainee.AddTrainee(testValidTrainee);
-
-            Assert.AreEqual("Введите ФИО родителя", actualResult);
-            mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
-        }
-        [TestMethod]
-        public void TestAddTrainee_emptyPhoneNumberParent()
-        {
-            var mockRep = new Mock<IStorageTrainee>();
-            var testTrainee = new TraineeDBManager(mockRep.Object);
-
-            var testValidTrainee = new Trainee
-            {
-                Id_Trainee = 1,
-                FIO = "Петров Пётр Петрович",
-                Birthday = new DateTime(1999, 1, 1),
-                Section = section.Спортивный_туризм,
-                Category = category.I_юношеский_спортивный_разряд,
-                FIOParent = "Петров Пётр Николаевич",
-                PhoneNumberParent = ""
-            };
-
-            var actualResult = testTrainee.AddTrainee(testValidTrainee);
-
-            Assert.AreEqual("Введите номер телефона родителя", actualResult);
-            mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
-        }
+        
         [TestMethod]
         public void TestAddTrainee_ExistingID()
         {
