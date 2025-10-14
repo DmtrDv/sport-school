@@ -28,21 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DeleteTraineee_button = new System.Windows.Forms.Button();
             this.AddTrainee_button = new System.Windows.Forms.Button();
             this.tableListTrainees_dataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.tableListTrainees_dataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DeleteTraineee_button
-            // 
-            this.DeleteTraineee_button.Location = new System.Drawing.Point(140, 169);
-            this.DeleteTraineee_button.Name = "DeleteTraineee_button";
-            this.DeleteTraineee_button.Size = new System.Drawing.Size(122, 23);
-            this.DeleteTraineee_button.TabIndex = 5;
-            this.DeleteTraineee_button.Text = "Удалить ученика";
-            this.DeleteTraineee_button.UseVisualStyleBackColor = true;
-            this.DeleteTraineee_button.Click += new System.EventHandler(this.DeleteTraineee_button_Click);
             // 
             // AddTrainee_button
             // 
@@ -70,7 +59,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.DeleteTraineee_button);
             this.Controls.Add(this.AddTrainee_button);
             this.Controls.Add(this.tableListTrainees_dataGridView);
             this.Name = "MainForm";
@@ -81,8 +69,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button DeleteTraineee_button;
         private System.Windows.Forms.Button AddTrainee_button;
         private System.Windows.Forms.DataGridView tableListTrainees_dataGridView;
     }

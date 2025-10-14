@@ -21,10 +21,5 @@ namespace WinFormSportSchool
         {
             MessageBox.Show("Вы могли бы добавить ученика, но, к сожалению, не сегодня");
         }
-
-        private void DeleteTraineee_button_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Сегодня вы никого не удалите");
-        }
     }
 }
