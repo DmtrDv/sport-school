@@ -10,5 +10,6 @@ namespace SportSchoolLib
     {
         void AddTrainee(Trainee trainee);
         bool Id_TraineeExists(int Id_Trainee);
+        bool DeleteTrainee(int Id_Trainee);
     }
 }
