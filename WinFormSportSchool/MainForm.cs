@@ -33,7 +33,12 @@ namespace WinFormSportSchool
 
         private void AddTrainee_button_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Вы могли бы добавить ученика, но, к сожалению, не сегодня");
+            TraineeDBManager traineeDBManager = new TraineeDBManager(traineeManager);
+            AddTraineeForm addTraineeForm = new AddTraineeForm(traineeDBManager);
+            if (addTraineeForm.ShowDialog() == DialogResult.OK)
+            {
+                tableListTrainees_dataGridView.DataSource = traineeManager.GetListTrainee();
+            }
         }
 
     }
