@@ -20,20 +20,20 @@ namespace WinFormSportSchool
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-            tableListTrainees_dataGridView.DataSource = traineeManager.GetListTrainee();
-        }
-
-        private void AddTrainee_button_Click(object sender, EventArgs e)
-        {
             try
             {
-                MessageBox.Show("Вы могли бы добавить ученика, но, к сожалению, не сегодня");
+                tableListTrainees_dataGridView.DataSource = traineeManager.GetListTrainee();
             }
             catch(Exception ex)
             {
                 MessageBox.Show($"Ошибка при загрузке данных: {ex.Message}", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void AddTrainee_button_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Вы могли бы добавить ученика, но, к сожалению, не сегодня");
         }
 
     }
