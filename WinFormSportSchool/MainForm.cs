@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SportSchoolLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,28 @@ namespace WinFormSportSchool
 {
     public partial class MainForm : Form
     {
+        MySQLTraineeManager traineeManager = new MySQLTraineeManager();
         public MainForm()
         {
             InitializeComponent();
         }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            tableListTrainees_dataGridView.DataSource = traineeManager.GetListTrainee();
+        }
 
         private void AddTrainee_button_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Вы могли бы добавить ученика, но, к сожалению, не сегодня");
+            try
+            {
+                MessageBox.Show("Вы могли бы добавить ученика, но, к сожалению, не сегодня");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Ошибка при загрузке данных: {ex.Message}", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
     }
 }
