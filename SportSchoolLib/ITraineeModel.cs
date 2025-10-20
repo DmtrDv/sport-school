@@ -9,5 +9,6 @@ namespace SportSchoolLib
     public interface ITraineeModel
     {
         List<Trainee> GetListTrainee();
+        string AddTrainee(Trainee trainee);
     }
 }

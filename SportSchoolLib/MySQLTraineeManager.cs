@@ -11,10 +11,10 @@ namespace SportSchoolLib
 {
     public class MySQLTraineeManager: ITraineeModel
     {
+        string connectionString =  "server=127.0.0.1;uid=root;pwd=vertrigo;database=sport_school;";
         public List<Trainee> GetListTrainee()
         {
             List<Trainee> trainees = new List<Trainee>();
-            string connectionString =  "server=127.0.0.1;uid=root;pwd=vertrigo;database=sport_school;";
 
             try
             {
