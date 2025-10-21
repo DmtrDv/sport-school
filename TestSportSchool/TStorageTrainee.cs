@@ -8,8 +8,6 @@ namespace TestSportSchool
     [TestClass]
     public class TStorageTrainee
     {
-        private IStorageTrainee _storageTrainee;
-        private Trainee _testTrainee;
         [TestMethod]
         public void TestAddTrainee_validData()
         {
