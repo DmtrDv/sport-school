@@ -16,6 +16,11 @@ namespace SportSchoolLib
         public category Category { get; set; }
         public string FIOParent { get; set; }
         public string PhoneNumberParent { get; set; }
+        public Trainee() { }
+        public Trainee(int Id)
+        {
+            Id_Trainee = Id;
+        }
     }
     public enum section
     {

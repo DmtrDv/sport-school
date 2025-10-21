@@ -9,17 +9,18 @@ namespace SportSchoolLib
     public class TraineeDBManager
     {
         private IStorageTrainee storage_;
-        private List<Trainee> trainees_;
+        private MySQLTraineeManager traineeManager;
 
-        public TraineeDBManager()
-        {
-            trainees_ = new List<Trainee>();
-        }
         public TraineeDBManager(IStorageTrainee storage)
         {
             storage_ = storage;
-            trainees_ = new List<Trainee>();
         }
+
+        public TraineeDBManager(MySQLTraineeManager traineeManager)
+        {
+            this.traineeManager = traineeManager;
+        }
+
         public string AddTrainee(Trainee trainee)
         {
             if (string.IsNullOrEmpty(trainee.FIO))
@@ -33,8 +34,14 @@ namespace SportSchoolLib
                     return $"Ученик с ID ^{trainee.Id_Trainee}^ уже существует";
                 }
                 storage_.AddTrainee(trainee);
+                return "Ученик успешно добавлен";
             }
-            return "Ученик успешно добавлен";
+            else if (traineeManager != null)
+            {
+                return traineeManager.AddTrainee(trainee);
+            }
+
+            return "Ошибка: менеджер данных не инициализирован";
         }
     }
 }
