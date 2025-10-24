@@ -36,5 +36,43 @@ namespace SportSchoolLib
             }
             return "Ученик успешно добавлен";
         }
+
+        public string DeleteTrainee(int idTrainee, bool userConfirmed = false)
+        {
+            if (!userConfirmed)
+            {
+                return "Удаление отменено пользователем";
+            }
+
+            if (storage_ != null)
+            {
+                // Проверяем существование обучающегося
+                if (!storage_.Id_TraineeExists(idTrainee))
+                {
+                    return $"Обучающийся с ID ^{idTrainee}^ не найден";
+                }
+
+                // Удаляем обучающегося
+                bool isDeleted = storage_.DeleteTrainee(idTrainee);
+
+                if (isDeleted)
+                {
+                    var traineeToRemove = trainees_.FirstOrDefault(t => t.Id_Trainee == idTrainee);
+                    if (traineeToRemove != null)
+                    {
+                        trainees_.Remove(traineeToRemove);
+                    }
+
+                    return "Учащийся успешно удалён";
+                }
+                else
+                {
+                    return "Ошибка при удалении учащегося";
+                }
+            }
+
+            return "Хранилище не инициализировано";
+        }
+
     }
 }

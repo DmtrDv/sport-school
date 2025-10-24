@@ -34,5 +34,43 @@ namespace TestSportSchool
             Assert.AreEqual("Ученик успешно добавлен", actualResult, "При успешном добавлении возвращается: Ученик успешно добавлен");
             mockRep.Verify(r => r.AddTrainee(testValidTrainee), Times.Once);
         }
+
+        [TestMethod]
+        public void TestDeleteTrainee_Success()
+        {
+            var mockRep = new Mock<IStorageTrainee>();
+            var traineeManager = new TraineeDBManager(mockRep.Object);
+            int traineeId = 1;
+            bool userConfirmed = true;
+
+            mockRep.Setup(r => r.Id_TraineeExists(traineeId))
+                   .Returns(true);
+            mockRep.Setup(r => r.DeleteTrainee(traineeId))
+                   .Returns(true);
+
+            var result = traineeManager.DeleteTrainee(traineeId, userConfirmed);
+
+            Assert.AreEqual("Учащийся успешно удалён", result);
+            mockRep.Verify(r => r.Id_TraineeExists(traineeId), Times.Once);
+            mockRep.Verify(r => r.DeleteTrainee(traineeId), Times.Once);
+        }
+
+        [TestMethod]
+        public void TestDeleteTrainee_TraineeNotFound()
+        {
+            var mockRep = new Mock<IStorageTrainee>();
+            var traineeManager = new TraineeDBManager(mockRep.Object);
+            int traineeId = 999; // Несуществующий ID
+            bool userConfirmed = true;
+
+            mockRep.Setup(r => r.Id_TraineeExists(traineeId))
+                   .Returns(false);
+
+            var result = traineeManager.DeleteTrainee(traineeId, userConfirmed);
+
+            Assert.AreEqual($"Обучающийся с ID ^{traineeId}^ не найден", result);
+            mockRep.Verify(r => r.Id_TraineeExists(traineeId), Times.Once);
+            mockRep.Verify(r => r.DeleteTrainee(It.IsAny<int>()), Times.Never);
+        }
     }
 }
