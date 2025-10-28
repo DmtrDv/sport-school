@@ -53,5 +53,53 @@ namespace TestSportSchool
             Assert.AreEqual(expectedResult, actualResult);
             mockrep.Verify(r => r.AddInstructor(testInvalidInstructor), Times.Never);
         }
+
+        [TestMethod]
+        public void TestAddFewInstructors_validData()
+        {
+            var mockrep = new Mock<IInstructorManager>();
+            var testInstructor = new InstructorManager(mockrep.Object);
+
+            List<Instructor> testInstructors = new List<Instructor>()
+            {
+                new Instructor()
+                {
+                    FIO_Instructor = "Петров Пётр Петрович",
+                    Qualification = qualification.Первая,
+                    PhoneNumberInstructor = "88005553535",
+                    Section = section.Спортивный_туризм
+                },
+                new Instructor()
+                {
+                    FIO_Instructor = "Иванов Иван Иванович",
+                    Qualification = qualification.Высшая,
+                    PhoneNumberInstructor = "88001112233",
+                    Section = section.Гребля
+                },
+                new Instructor()
+                {
+                    FIO_Instructor = "Дмитров Дмитрий Дмитриевич",
+                    Qualification = qualification.Вторая,
+                    PhoneNumberInstructor = "88007778899",
+                    Section = section.Скалолазание
+                }
+            };
+
+            foreach (var instructor in testInstructors)
+            {
+                mockrep.Setup(r => r.AddInstructor(instructor)).Returns(true);
+            }
+
+            for (int i = 0; i < testInstructors.Count; i++)
+            {
+                string actualResult = testInstructor.AddInstructor(testInstructors[i]);
+                Assert.AreEqual("Новый тренер успешно добавлен", actualResult);
+            }
+
+            foreach (var instructor in testInstructors)
+            {
+                mockrep.Verify(r => r.AddInstructor(instructor), Times.Once);
+            }
+        }
     }
 }
