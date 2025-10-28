@@ -8,6 +8,12 @@ namespace SportSchoolLib
 {
     public class InstructorManager
     {
+        private IInstructorManager storage_;
+        public InstructorManager(IInstructorManager storage)
+        {
+            storage_ = storage;
+        }
+
         public string AddInstructor(Instructor instructor)
         {
             return "";

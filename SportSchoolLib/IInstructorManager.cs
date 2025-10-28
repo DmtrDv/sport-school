@@ -8,6 +8,6 @@ namespace SportSchoolLib
 {
     public interface IInstructorManager
     {
-        string AddInstructor(Instructor instructor);
+        bool AddInstructor(Instructor instructor);
     }
 }
