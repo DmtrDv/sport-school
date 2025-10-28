@@ -29,6 +29,27 @@ namespace TestSportSchool
             mockrep.Setup(r => r.AddInstructor(testValidInstructor)).Returns(true);
             var actualResult = testInstructor.AddInstructor(testValidInstructor);
             Assert.AreEqual("Новый тренер успешно добавлен", actualResult);
+            mockrep.Verify(r => r.AddInstructor(testValidInstructor), Times.Once);
+        }
+
+        [TestMethod]
+
+        public void TestAddInstructor_invalidData(string Fio, qualification qualif, string phone, section section, string expectedResult)
+        {
+            var mockrep = new Mock<IInstructorManager>();
+            var testInstructor = new InstructorManager(mockrep.Object);
+
+            var testValidInstructor = new Instructor()
+            {
+                FIO_Instructor = Fio,
+                Qualification = qualif,
+                PhoneNumberInstructor = phone,
+                Section = section
+            };
+
+            var actualResult = testInstructor.AddInstructor(testValidInstructor);
+            Assert.AreEqual(expectedResult, actualResult);
+            mockrep.Verify(r => r.AddInstructor(It.IsAny<Instructor>()), Times.Never);
         }
     }
 }
