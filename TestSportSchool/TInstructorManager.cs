@@ -33,13 +33,15 @@ namespace TestSportSchool
         }
 
         [TestMethod]
-
+        [DataRow("", qualification.Первая, "88005553535", section.Спортивный_туризм, "Введите ФИО тренера")]
+        [DataRow("Петров Пётр Петрович", (qualification)123, "88005553535", section.Спортивный_туризм, "Выберите квалификацию")]
+        [DataRow("Петров Пётр Петрович", qualification.Первая, "88005553535", (section)789, "Выберите секцию")]
         public void TestAddInstructor_invalidData(string Fio, qualification qualif, string phone, section section, string expectedResult)
         {
             var mockrep = new Mock<IInstructorManager>();
             var testInstructor = new InstructorManager(mockrep.Object);
 
-            var testValidInstructor = new Instructor()
+            var testInvalidInstructor = new Instructor()
             {
                 FIO_Instructor = Fio,
                 Qualification = qualif,
@@ -47,9 +49,9 @@ namespace TestSportSchool
                 Section = section
             };
 
-            var actualResult = testInstructor.AddInstructor(testValidInstructor);
+            var actualResult = testInstructor.AddInstructor(testInvalidInstructor);
             Assert.AreEqual(expectedResult, actualResult);
-            mockrep.Verify(r => r.AddInstructor(It.IsAny<Instructor>()), Times.Never);
+            mockrep.Verify(r => r.AddInstructor(testInvalidInstructor), Times.Never);
         }
     }
 }
