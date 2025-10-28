@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IInstructorManager.cs" />
     <Compile Include="Instructor.cs" />
     <Compile Include="InstructorManager.cs" />
     <Compile Include="IStorageTrainee.cs" />
