@@ -33,7 +33,7 @@ namespace TestSportSchool
             mockRep.Verify(r => r.AddTrainee(testValidTrainee), Times.Once);
         }
         [TestMethod]
-        [DataRow("", 1999,01,01, section.Спортивный_туризм, category.I_юношеский_спортивный_разряд, "Петров Пётр Николаевич", "88005553535", "Введите ФИО ученика")]
+        [DataRow("", 1999, 01, 01, section.Спортивный_туризм, category.I_юношеский_спортивный_разряд, "Петров Пётр Николаевич", "88005553535", "Введите ФИО ученика")]
         [DataRow("Петров Пётр Петрович", 1999, 13, 01, section.Спортивный_туризм, category.I_юношеский_спортивный_разряд, "Петров Пётр Николаевич", "88005553535", "Введите правильную дату")]
         [DataRow("Петров Пётр Петрович", 1999, 01, 01, (section)1123456543, category.I_юношеский_спортивный_разряд, "Петров Пётр Николаевич", "88005553535", "Выберите одну из существующих секций")]
         [DataRow("Петров Пётр Петрович", 1999, 01, 01, section.Спортивный_туризм, (category)3452443, "Петров Пётр Николаевич", "88005553535", "Выберите один из существующих разрядов")]
@@ -60,7 +60,7 @@ namespace TestSportSchool
             mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);
         }
 
-        
+
         [TestMethod]
         public void TestAddTrainee_ExistingID()
         {
@@ -125,43 +125,44 @@ namespace TestSportSchool
 
             Assert.AreEqual("Такой ID ученика уже существует", actualResult);
             mockRep.Verify(r => r.AddTrainee(It.IsAny<Trainee>()), Times.Never);*/
-
-        [TestMethod]
-        public void TestDeleteTrainee_Success()
-        {
-            var mockRep = new Mock<IStorageTrainee>();
-            var traineeManager = new TraineeDBManager(mockRep.Object);
-            int traineeId = 1;
-            bool userConfirmed = true;
-
-            mockRep.Setup(r => r.Id_TraineeExists(traineeId))
-                   .Returns(true);
-            mockRep.Setup(r => r.DeleteTrainee(traineeId))
-                   .Returns(true);
-
-            var result = traineeManager.DeleteTrainee(traineeId, userConfirmed);
-
-            Assert.AreEqual("Учащийся успешно удалён", result);
-            mockRep.Verify(r => r.Id_TraineeExists(traineeId), Times.Once);
-            mockRep.Verify(r => r.DeleteTrainee(traineeId), Times.Once);
         }
-
         [TestMethod]
-        public void TestDeleteTrainee_TraineeNotFound()
-        {
-            var mockRep = new Mock<IStorageTrainee>();
-            var traineeManager = new TraineeDBManager(mockRep.Object);
-            int traineeId = 999; // Несуществующий ID
-            bool userConfirmed = true;
+            public void TestDeleteTrainee_Success()
+            {
+                var mockRep = new Mock<IStorageTrainee>();
+                var traineeManager = new TraineeDBManager(mockRep.Object);
+                int traineeId = 1;
+                bool userConfirmed = true;
 
-            mockRep.Setup(r => r.Id_TraineeExists(traineeId))
-                   .Returns(false);
+                mockRep.Setup(r => r.Id_TraineeExists(traineeId))
+                       .Returns(true);
+                mockRep.Setup(r => r.DeleteTrainee(traineeId))
+                       .Returns(true);
 
-            var result = traineeManager.DeleteTrainee(traineeId, userConfirmed);
+                var result = traineeManager.DeleteTrainee(traineeId, userConfirmed);
 
-            Assert.AreEqual($"Обучающийся с ID ^{traineeId}^ не найден", result);
-            mockRep.Verify(r => r.Id_TraineeExists(traineeId), Times.Once);
-            mockRep.Verify(r => r.DeleteTrainee(It.IsAny<int>()), Times.Never);
-        }
+                Assert.AreEqual("Учащийся успешно удалён", result);
+                mockRep.Verify(r => r.Id_TraineeExists(traineeId), Times.Once);
+                mockRep.Verify(r => r.DeleteTrainee(traineeId), Times.Once);
+            }
+
+            [TestMethod]
+            public void TestDeleteTrainee_TraineeNotFound()
+            {
+                var mockRep = new Mock<IStorageTrainee>();
+                var traineeManager = new TraineeDBManager(mockRep.Object);
+                int traineeId = 999; // Несуществующий ID
+                bool userConfirmed = true;
+
+                mockRep.Setup(r => r.Id_TraineeExists(traineeId))
+                       .Returns(false);
+
+                var result = traineeManager.DeleteTrainee(traineeId, userConfirmed);
+
+                Assert.AreEqual($"Обучающийся с ID ^{traineeId}^ не найден", result);
+                mockRep.Verify(r => r.Id_TraineeExists(traineeId), Times.Once);
+                mockRep.Verify(r => r.DeleteTrainee(It.IsAny<int>()), Times.Never);
+            }
+        
     }
 }
