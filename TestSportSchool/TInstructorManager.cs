@@ -26,10 +26,18 @@ namespace TestSportSchool
                 Section = section.Спортивный_туризм
             };
 
-            mockrep.Setup(r => r.AddInstructor(testValidInstructor)).Returns(true);
+            List<Instructor> repositoryContent = new List<Instructor>();
+
+            mockrep.Setup(r => r.AddInstructor(testValidInstructor))
+                   .Returns(true)
+                   .Callback<Instructor>(instructor => repositoryContent.Add(instructor));
             var actualResult = testInstructor.AddInstructor(testValidInstructor);
+
             Assert.AreEqual("Новый тренер успешно добавлен", actualResult);
             mockrep.Verify(r => r.AddInstructor(testValidInstructor), Times.Once);
+
+            Assert.IsTrue(repositoryContent.Contains(testValidInstructor),
+                "Тренер не был сохранен в репозитории");
         }
 
         [TestMethod]
@@ -53,6 +61,7 @@ namespace TestSportSchool
             Assert.AreEqual(expectedResult, actualResult);
             mockrep.Verify(r => r.AddInstructor(testInvalidInstructor), Times.Never);
         }
+        
 
         [TestMethod]
         public void TestAddFewInstructors_validData()
@@ -61,8 +70,8 @@ namespace TestSportSchool
             var testInstructor = new InstructorManager(mockrep.Object);
 
             List<Instructor> testInstructors = new List<Instructor>()
-            {
-                new Instructor()
+    {
+        new Instructor()
                 {
                     FIO_Instructor = "Петров Пётр Петрович",
                     Qualification = qualification.Первая,
@@ -83,23 +92,32 @@ namespace TestSportSchool
                     PhoneNumberInstructor = "88007778899",
                     Section = section.Скалолазание
                 }
-            };
+    };
+
+            List<Instructor> repositoryContent = new List<Instructor>();
+
+            mockrep.Setup(r => r.AddInstructor(It.IsAny<Instructor>()))
+                   .Returns(true)
+                   .Callback<Instructor>(repositoryContent.Add);
 
             foreach (var instructor in testInstructors)
             {
-                mockrep.Setup(r => r.AddInstructor(instructor)).Returns(true);
+                string result = testInstructor.AddInstructor(instructor);
+                Assert.AreEqual("Новый тренер успешно добавлен", result);
             }
 
-            for (int i = 0; i < testInstructors.Count; i++)
+            Assert.AreEqual(testInstructors.Count, repositoryContent.Count);
+
+            foreach (var expectedInstructor in testInstructors)
             {
-                string actualResult = testInstructor.AddInstructor(testInstructors[i]);
-                Assert.AreEqual("Новый тренер успешно добавлен", actualResult);
+                var actualInstructor = repositoryContent.FirstOrDefault(i =>
+                    i.FIO_Instructor == expectedInstructor.FIO_Instructor);
+
+                Assert.IsNotNull(actualInstructor);
+                Assert.AreEqual(expectedInstructor.PhoneNumberInstructor, actualInstructor.PhoneNumberInstructor);
             }
 
-            foreach (var instructor in testInstructors)
-            {
-                mockrep.Verify(r => r.AddInstructor(instructor), Times.Once);
-            }
+            mockrep.Verify(r => r.AddInstructor(It.IsAny<Instructor>()), Times.Exactly(3));
         }
     }
 }
