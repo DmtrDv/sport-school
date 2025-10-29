@@ -29,7 +29,7 @@ namespace TestSportSchool
             List<Instructor> repositoryContent = new List<Instructor>();
 
             mockrep.Setup(r => r.AddInstructor(testValidInstructor))
-                   .Returns(true)
+                   .Returns("")
                    .Callback<Instructor>(instructor => repositoryContent.Add(instructor));
             var actualResult = testInstructor.AddInstructor(testValidInstructor);
 
@@ -97,7 +97,7 @@ namespace TestSportSchool
             List<Instructor> repositoryContent = new List<Instructor>();
 
             mockrep.Setup(r => r.AddInstructor(It.IsAny<Instructor>()))
-                   .Returns(true)
+                   .Returns("")
                    .Callback<Instructor>(repositoryContent.Add);
 
             foreach (var instructor in testInstructors)
