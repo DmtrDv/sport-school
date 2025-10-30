@@ -98,15 +98,17 @@ namespace TestSportSchool
 
             mockrep.Setup(r => r.AddInstructor(It.IsAny<Instructor>()))
                    .Returns("")
-                   .Callback<Instructor>(repositoryContent.Add);
+                   .Callback<Instructor>(instructor => repositoryContent.Add(instructor));
 
-            foreach (var instructor in testInstructors)
+            foreach (Instructor instructor in testInstructors)
             {
                 string result = testInstructor.AddInstructor(instructor);
                 Assert.AreEqual("Новый тренер успешно добавлен", result);
             }
 
-            Assert.AreEqual(testInstructors.Count, repositoryContent.Count);
+            CollectionAssert.AreEqual(testInstructors.Select(i => i.FIO_Instructor).ToList(),
+                                      repositoryContent.Select(i => i.FIO_Instructor).ToList(),
+                                      "Списки инструкторов не совпадают");
 
             foreach (var expectedInstructor in testInstructors)
             {
