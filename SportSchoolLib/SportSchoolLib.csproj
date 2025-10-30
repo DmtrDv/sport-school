@@ -99,6 +99,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IInstructorManager.cs" />
+    <Compile Include="Instructor.cs" />
+    <Compile Include="InstructorManager.cs" />
     <Compile Include="IStorageTrainee.cs" />
     <Compile Include="ITraineeModel.cs" />
     <Compile Include="MySQLTraineeManager.cs" />
