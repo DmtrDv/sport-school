@@ -20,8 +20,8 @@ namespace SportSchoolLib
     public enum section
     {
         Спортивный_туризм,
-        скалолазание,
-        гребля
+        Скалолазание,
+        Гребля
 
     }
     public enum category

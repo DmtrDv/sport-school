@@ -9,6 +9,7 @@ namespace SportSchoolLib
     public class TraineeDBManager
     {
         private IStorageTrainee storage_;
+        private List<Trainee> trainees_;
 
         public TraineeDBManager(IStorageTrainee storage)
         {
