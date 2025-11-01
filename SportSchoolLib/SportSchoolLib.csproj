@@ -110,6 +110,7 @@
     <Compile Include="ITraineeModel.cs" />
     <Compile Include="MySQLTraineeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLInstructorManager.cs" />
     <Compile Include="Trainee.cs" />
     <Compile Include="TraineeDBManager.cs" />
   </ItemGroup>
