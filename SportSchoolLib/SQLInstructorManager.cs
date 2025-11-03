@@ -19,7 +19,7 @@ namespace SportSchoolLib
             {
                 conn = new MySqlConnection(AppSettings.ConnectionString);
                 conn.Open();
-                const string query = "SELECT  FROM;";
+                const string query = "SELECT Id_instructor, FIOInstructor, qualification, NumberPhoneInstructor, Section FROM instructor";
                 MySqlCommand command = new MySqlCommand(query, conn);
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
