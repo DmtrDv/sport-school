@@ -25,16 +25,16 @@ namespace SportSchoolLib
                 {
                     while (reader.Read())
                     {
-                        int ID = reader.GetInt32("");
+                        int ID = reader.GetInt32("Id_instructor");
 
                         Instructor instructor= new Instructor(ID);
-                        instructor.FIO_Instructor = reader.GetString("");
-                        string qualificationString = reader.GetString("");
+                        instructor.FIO_Instructor = reader.GetString("FIOInstructor");
+                        string qualificationString = reader.GetString("qualification");
                         if (Enum.TryParse<SportSchoolLib.qualification>(qualificationString, true, out var qualification))
                         {
                             instructor.Qualification = qualification;
                         }
-                        instructor.PhoneNumberInstructor = reader.GetString("");
+                        instructor.PhoneNumberInstructor = reader.GetString("NumberPhoneInstructor");
                         string sectionString = reader.GetString("Section");
                         if (Enum.TryParse<SportSchoolLib.section>(sectionString, true, out var section))
                         {
