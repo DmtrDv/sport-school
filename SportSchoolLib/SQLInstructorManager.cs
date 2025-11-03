@@ -52,5 +52,41 @@ namespace SportSchoolLib
 
             return result;
         }
+        public string AddInstructor(Instructor instructor)
+        {
+            using (MySqlConnection conn = new MySqlConnection(AppSettings.ConnectionString))
+            {
+                try
+                {                
+                    conn.Open();
+                    string request = @"INSERT INTO instructor 
+                                (FIOInstructor, qualification, NumberPhoneInstructor, Section) 
+                                VALUES (@FIOInstructor, @qualification, @NumberPhoneInstructor, @Section)";
+
+                    using (MySqlCommand command = new MySqlCommand(request, conn))
+                    {
+                        command.Parameters.AddWithValue("@FIOInstructor", instructor.FIO_Instructor);
+                        command.Parameters.AddWithValue("@qualification", instructor.Qualification.ToString());
+                        command.Parameters.AddWithValue("@NumberPhoneInstructor", instructor.PhoneNumberInstructor);
+                        command.Parameters.AddWithValue("@Section", instructor.Section.ToString());
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            return "Тренер успешно добавлен";
+                        }
+                        else
+                        {
+                            return "Ошибка: тренер не был добавлен";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return "Ошибка при добавлении: " + ex;
+                }
+            }
+
+        }
     }
 }
