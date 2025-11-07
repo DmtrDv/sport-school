@@ -120,6 +120,53 @@ namespace TestSportSchool
             }
 
             mockrep.Verify(r => r.AddInstructor(It.IsAny<Instructor>()), Times.Exactly(3));
+
+            [TestMethod]
+            public void DeleteInstructor_Success()
+            {
+                // Arrange
+                var instructor = new Instructor();
+                _mockStorage.Setup(s => s.DeleteInstructor(instructor))
+                           .Returns("Тренер успешно удалён");
+
+                // Act
+                string result = _instructorManager.DeleteInstructor(instructor);
+
+                // Assert
+                Assert.AreEqual("Тренер успешно удалён", result, "Система должна сообщать об успехе операции удаления");
+
+                [TestMethod]
+                public void DeleteInstructor_Success_InstructorRemovedFromSystem()
+                {
+                    // Arrange
+                    var instructor = new Instructor();
+                    _mockStorage.Setup(s => s.DeleteInstructor(instructor))
+                               .Returns("Тренер успешно удалён");
+
+                    // Act
+                    string result = _instructorManager.DeleteInstructor(instructor);
+
+                    // Assert
+                    _mockStorage.Verify(s => s.DeleteInstructor(instructor), Times.Once(),
+                                       "Операция удаления должна быть вызвана один раз для указанного тренера");
+                    Assert.AreEqual("Тренер успешно удалён", result, "Должно возвращаться сообщение об успешном удалении");
+                }
+
+                [TestMethod]
+                public void DeleteInstructor_NonExistentInstructor()
+                {
+                    // Arrange
+                    var nonExistentInstructor = new Instructor();
+                    _mockStorage.Setup(s => s.DeleteInstructor(nonExistentInstructor))
+                               .Returns("Тренер не найден");
+
+                    // Act
+                    string result = _instructorManager.DeleteInstructor(nonExistentInstructor);
+
+                    // Assert
+                    Assert.AreEqual("Тренер не найден", result, "Система должна сообщать о неудаче операции удаления");
+                }
+            }
         }
     }
 }
