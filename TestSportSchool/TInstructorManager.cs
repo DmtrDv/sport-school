@@ -152,7 +152,19 @@ namespace TestSportSchool
                     Assert.AreEqual("Тренер успешно удалён", result, "Должно возвращаться сообщение об успешном удалении");
                 }
 
-                
+                [TestMethod]
+                public void DeleteInstructor_NonExistentInstructor()
+                {
+                    // Arrange
+                    var nonExistentInstructor = new Instructor();
+                    _mockStorage.Setup(s => s.DeleteInstructor(nonExistentInstructor))
+                               .Returns("Тренер не найден");
+
+                    // Act
+                    string result = _instructorManager.DeleteInstructor(nonExistentInstructor);
+
+                    // Assert
+                    Assert.AreEqual("Тренер не найден", result, "Система должна сообщать о неудаче операции удаления");
                 }
             }
         }
