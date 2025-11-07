@@ -43,7 +43,6 @@ namespace WinFormSportSchool
 
         private void DeleteTrainee_Button_Click(object sender, EventArgs e)
         {
-            TraineeDBManager traineeDBManager = new TraineeDBManager(traineeManager);
             if (tableListTrainees_dataGridView.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Выберите ученика для удаления", "Информация",
@@ -64,7 +63,40 @@ namespace WinFormSportSchool
 
             if (result == DialogResult.OK)
             {
-                
+                try
+                {
+                    // Создаем менеджер и выполняем удаление
+                    TraineeDBManager traineeDBManager = new TraineeDBManager(traineeManager);
+
+                    // Вызываем метод удаления (предполагая, что в MySQLTraineeManager есть такой метод)
+                    // Если метода нет, нужно будет его добавить в MySQLTraineeManager
+                    string deleteResult = traineeManager.DeleteTrainee(traineeId);
+
+                    if (deleteResult == "Учащийся успешно удалён")
+                    {
+                        MessageBox.Show("Учащийся успешно удалён", "Успех",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Обновляем список учащихся
+                        tableListTrainees_dataGridView.DataSource = traineeManager.GetListTrainee();
+                    }
+                    else
+                    {
+                        MessageBox.Show(deleteResult, "Ошибка",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при удалении учащегося: {ex.Message}", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // Пользователь отменил удаление
+                MessageBox.Show("Удаление отменено", "Информация",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
