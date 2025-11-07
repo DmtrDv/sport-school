@@ -22,5 +22,10 @@ namespace SportSchoolLib
         //содержащий данныет тренера (ФИО, квалификацию, телефон, секцию)
 
         // выходные данные: строка сообщающая об успехе или ошибке добавления тренера
+
+        public string DeleteInstructor(Instructor instructor)
+        {
+            return "бебебе";
+        }
     }
 }

@@ -9,5 +9,7 @@ namespace SportSchoolLib
     public interface IInstructorManager
     {
         string AddInstructor(Instructor instructor);
+        string DeleteInstructor(Instructor instructor);
+
     }
 }
