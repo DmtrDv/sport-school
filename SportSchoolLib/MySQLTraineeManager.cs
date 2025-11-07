@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace SportSchoolLib
 {
@@ -93,6 +94,52 @@ namespace SportSchoolLib
             catch (Exception ex)
             {
                 return "Ошибка при добавлении: " + ex;
+            }
+        }
+
+        public string DeleteTrainee(int traineeId)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Сначала проверяем существование ученика
+                    string checkSql = "SELECT COUNT(*) FROM trainee WHERE Id_Trainee = @Id_Trainee";
+                    using (MySqlCommand checkCommand = new MySqlCommand(checkSql, connection))
+                    {
+                        checkCommand.Parameters.AddWithValue("@Id_Trainee", traineeId);
+                        long count = (long)checkCommand.ExecuteScalar();
+
+                        if (count == 0)
+                        {
+                            return $"Обучающийся с ID ^{traineeId}^ не найден";
+                        }
+                    }
+
+                    // Удаляем ученика
+                    string deleteSql = "DELETE FROM trainee WHERE Id_Trainee = @Id_Trainee";
+                    using (MySqlCommand deleteCommand = new MySqlCommand(deleteSql, connection))
+                    {
+                        deleteCommand.Parameters.AddWithValue("@Id_Trainee", traineeId);
+
+                        int rowsAffected = deleteCommand.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            return "Учащийся успешно удалён";
+                        }
+                        else
+                        {
+                            return "Ошибка при удалении учащегося";
+                        }
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                return "Ошибка при удалении: " + ex.Message;
             }
         }
     }

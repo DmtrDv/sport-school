@@ -30,15 +30,15 @@
         {
             this.AddTrainee_button = new System.Windows.Forms.Button();
             this.tableListTrainees_dataGridView = new System.Windows.Forms.DataGridView();
+            this.DeleteTrainee_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableListTrainees_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // AddTrainee_button
             // 
-            this.AddTrainee_button.Location = new System.Drawing.Point(16, 208);
-            this.AddTrainee_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddTrainee_button.Location = new System.Drawing.Point(12, 169);
             this.AddTrainee_button.Name = "AddTrainee_button";
-            this.AddTrainee_button.Size = new System.Drawing.Size(163, 28);
+            this.AddTrainee_button.Size = new System.Drawing.Size(122, 23);
             this.AddTrainee_button.TabIndex = 4;
             this.AddTrainee_button.Text = "Добавить ученика";
             this.AddTrainee_button.UseVisualStyleBackColor = true;
@@ -50,21 +50,30 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableListTrainees_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableListTrainees_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableListTrainees_dataGridView.Location = new System.Drawing.Point(16, 15);
-            this.tableListTrainees_dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableListTrainees_dataGridView.Location = new System.Drawing.Point(12, 12);
             this.tableListTrainees_dataGridView.Name = "tableListTrainees_dataGridView";
             this.tableListTrainees_dataGridView.RowHeadersWidth = 51;
-            this.tableListTrainees_dataGridView.Size = new System.Drawing.Size(1033, 185);
+            this.tableListTrainees_dataGridView.Size = new System.Drawing.Size(775, 150);
             this.tableListTrainees_dataGridView.TabIndex = 3;
+            // 
+            // DeleteTrainee_Button
+            // 
+            this.DeleteTrainee_Button.Location = new System.Drawing.Point(152, 168);
+            this.DeleteTrainee_Button.Name = "DeleteTrainee_Button";
+            this.DeleteTrainee_Button.Size = new System.Drawing.Size(114, 23);
+            this.DeleteTrainee_Button.TabIndex = 5;
+            this.DeleteTrainee_Button.Text = "Удалить ученика";
+            this.DeleteTrainee_Button.UseVisualStyleBackColor = true;
+            this.DeleteTrainee_Button.Click += new System.EventHandler(this.DeleteTrainee_Button_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DeleteTrainee_Button);
             this.Controls.Add(this.AddTrainee_button);
             this.Controls.Add(this.tableListTrainees_dataGridView);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "Спортивная школа";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -76,6 +85,7 @@
         #endregion
         private System.Windows.Forms.Button AddTrainee_button;
         private System.Windows.Forms.DataGridView tableListTrainees_dataGridView;
+        private System.Windows.Forms.Button DeleteTrainee_Button;
     }
 }
 

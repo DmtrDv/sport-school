@@ -41,5 +41,31 @@ namespace WinFormSportSchool
             }
         }
 
+        private void DeleteTrainee_Button_Click(object sender, EventArgs e)
+        {
+            TraineeDBManager traineeDBManager = new TraineeDBManager(traineeManager);
+            if (tableListTrainees_dataGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Выберите ученика для удаления", "Информация",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            // Получаем ID выбранного ученика
+            var selectedRow = tableListTrainees_dataGridView.SelectedRows[0];
+            int traineeId = Convert.ToInt32(selectedRow.Cells["Id_Trainee"].Value);
+            string traineeName = selectedRow.Cells["FIO"].Value.ToString();
+
+            // Подтверждение удаления
+            var result = MessageBox.Show($"Вы уверены, что хотите удалить учащегося?",
+                "Подтверждение удаления",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (result == DialogResult.OK)
+            {
+                
+            }
+        }
     }
 }
