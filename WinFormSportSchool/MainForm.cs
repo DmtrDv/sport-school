@@ -68,8 +68,7 @@ namespace WinFormSportSchool
                     // Создаем менеджер и выполняем удаление
                     TraineeDBManager traineeDBManager = new TraineeDBManager(traineeManager);
 
-                    // Вызываем метод удаления (предполагая, что в MySQLTraineeManager есть такой метод)
-                    // Если метода нет, нужно будет его добавить в MySQLTraineeManager
+                    // Вызываем метод удаления
                     string deleteResult = traineeManager.DeleteTrainee(traineeId);
 
                     if (deleteResult == "Учащийся успешно удалён")
