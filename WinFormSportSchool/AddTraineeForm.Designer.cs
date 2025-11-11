@@ -144,6 +144,7 @@
             // 
             // Add_button
             // 
+            this.Add_button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Add_button.Location = new System.Drawing.Point(29, 214);
             this.Add_button.Name = "Add_button";
             this.Add_button.Size = new System.Drawing.Size(86, 23);
@@ -181,6 +182,8 @@
             this.Controls.Add(this.Section_label);
             this.Controls.Add(this.DateBirthday_label);
             this.Controls.Add(this.FIO_label);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddTraineeForm";
             this.Text = "Добавление ученика";
             this.ResumeLayout(false);
