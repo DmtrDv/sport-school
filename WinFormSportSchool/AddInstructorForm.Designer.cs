@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.FIO_textBox = new System.Windows.Forms.TextBox();
+            this.PhoneNumber_textBox = new System.Windows.Forms.MaskedTextBox();
+            this.Qualification_comboBox = new System.Windows.Forms.ComboBox();
+            this.Section_comboBox = new System.Windows.Forms.ComboBox();
             this.FIOInstructor_label = new System.Windows.Forms.Label();
             this.Qualification_label = new System.Windows.Forms.Label();
             this.PhoneNumberInstructor_label = new System.Windows.Forms.Label();
@@ -40,43 +40,39 @@
             this.Cancel_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // FIO_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 22);
-            this.textBox1.TabIndex = 0;
+            this.FIO_textBox.Location = new System.Drawing.Point(135, 25);
+            this.FIO_textBox.Name = "FIO_textBox";
+            this.FIO_textBox.Size = new System.Drawing.Size(177, 22);
+            this.FIO_textBox.TabIndex = 0;
             // 
-            // textBox2
+            // PhoneNumber_textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(135, 101);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 22);
-            this.textBox2.TabIndex = 1;
+            this.PhoneNumber_textBox.Location = new System.Drawing.Point(135, 101);
+            this.PhoneNumber_textBox.Name = "PhoneNumber_textBox";
+            this.PhoneNumber_textBox.Size = new System.Drawing.Size(177, 22);
+            this.PhoneNumber_textBox.TabIndex = 1;
             // 
-            // comboBox1
+            // Qualification_comboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.Qualification_comboBox.FormattingEnabled = true;
+            this.Qualification_comboBox.Items.AddRange(new object[] {
             "Первая",
             "Вторая",
             "Высшая"});
-            this.comboBox1.Location = new System.Drawing.Point(135, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(177, 24);
-            this.comboBox1.TabIndex = 2;
+            this.Qualification_comboBox.Location = new System.Drawing.Point(135, 62);
+            this.Qualification_comboBox.Name = "Qualification_comboBox";
+            this.Qualification_comboBox.Size = new System.Drawing.Size(177, 24);
+            this.Qualification_comboBox.TabIndex = 2;
             // 
-            // comboBox2
+            // Section_comboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Спортивный_туризм",
-            "Скалолазание",
-            "Гребля"});
-            this.comboBox2.Location = new System.Drawing.Point(135, 142);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(177, 24);
-            this.comboBox2.TabIndex = 3;
+            this.Section_comboBox.FormattingEnabled = true;
+            this.Section_comboBox.Location = new System.Drawing.Point(135, 142);
+            this.Section_comboBox.Name = "Section_comboBox";
+            this.Section_comboBox.Size = new System.Drawing.Size(177, 24);
+            this.Section_comboBox.TabIndex = 3;
             // 
             // FIOInstructor_label
             // 
@@ -145,10 +141,10 @@
             this.Controls.Add(this.PhoneNumberInstructor_label);
             this.Controls.Add(this.Qualification_label);
             this.Controls.Add(this.FIOInstructor_label);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Section_comboBox);
+            this.Controls.Add(this.Qualification_comboBox);
+            this.Controls.Add(this.PhoneNumber_textBox);
+            this.Controls.Add(this.FIO_textBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -161,10 +157,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox FIO_textBox;
+        private System.Windows.Forms.MaskedTextBox PhoneNumber_textBox;
+        private System.Windows.Forms.ComboBox Qualification_comboBox;
+        private System.Windows.Forms.ComboBox Section_comboBox;
         private System.Windows.Forms.Label FIOInstructor_label;
         private System.Windows.Forms.Label Qualification_label;
         private System.Windows.Forms.Label PhoneNumberInstructor_label;

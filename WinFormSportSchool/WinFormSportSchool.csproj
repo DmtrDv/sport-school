@@ -110,11 +110,11 @@
     <Compile Include="AddTraineeForm.Designer.cs">
       <DependentUpon>AddTraineeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="MainTraineeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="MainTraineeForm.Designer.cs">
+      <DependentUpon>MainTraineeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainInstructorForm.cs">
       <SubType>Form</SubType>
@@ -130,8 +130,8 @@
     <EmbeddedResource Include="AddTraineeForm.resx">
       <DependentUpon>AddTraineeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainTraineeForm.resx">
+      <DependentUpon>MainTraineeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainInstructorForm.resx">
       <DependentUpon>MainInstructorForm.cs</DependentUpon>
@@ -144,6 +144,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -164,6 +165,12 @@
       <Project>{207ab898-191f-44c3-acab-73b634ab16d7}</Project>
       <Name>SportSchoolLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_Delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

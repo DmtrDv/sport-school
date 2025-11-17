@@ -13,7 +13,7 @@ namespace WinFormSportSchool
 {
     public partial class MainInstructorForm: Form
     {
-        SQLInstructorManager instructorManager = new SQLInstructorManager();
+        SQLInstructorManager instrManager = new SQLInstructorManager();
         public MainInstructorForm()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace WinFormSportSchool
         {
             try
             {
-                InstructorsList_dataGridView.DataSource = instructorManager.GetInstructors();
+                InstructorsList_dataGridView.DataSource = instrManager.GetInstructors();
             }
             catch (Exception ex)
             {
@@ -34,7 +34,18 @@ namespace WinFormSportSchool
 
         private void AddInstructor_toolStripButton_Click(object sender, EventArgs e)
         {
-
+            InstructorManager instructorManager = new InstructorManager(instrManager);
+            AddInstructorForm addInstructorForm = new AddInstructorForm(instructorManager);
+            if (addInstructorForm.ShowDialog() == DialogResult.OK)
+            {
+                InstructorsList_dataGridView.DataSource = instrManager.GetInstructors();
+            }
+            /*InstructorManager instructor = new InstructorManager(instructorManager);
+            AddInstructorForm addInstructorForm = new AddInstructorForm(instructor);
+            if (addInstructorForm.ShowDialog() == DialogResult.OK)
+            {
+                InstructorsList_dataGridView.DataSource = instructorManager.GetInstructors();
+            }*/
         }
     }
 }

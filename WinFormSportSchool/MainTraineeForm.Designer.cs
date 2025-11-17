@@ -1,6 +1,6 @@
 ﻿namespace WinFormSportSchool
 {
-    partial class MainForm
+    partial class MainTraineeForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
