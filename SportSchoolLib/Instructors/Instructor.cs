@@ -13,8 +13,12 @@ namespace SportSchoolLib
         public qualification Qualification { get; set; } // квалификация 
         public string PhoneNumberInstructor { get; set; } // номер телефона 
         public section Section{ get; set; } // секция 
-        
-        public Instructor(int Id_Instructor) { }
+
+        public Instructor() { }
+        public Instructor(int Id) 
+        {
+            Id_Instructor = Id;
+        }
     }
     public enum qualification
     {

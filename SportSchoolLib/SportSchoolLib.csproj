@@ -103,16 +103,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
-    <Compile Include="IInstructorManager.cs" />
-    <Compile Include="Instructor.cs" />
-    <Compile Include="InstructorManager.cs" />
-    <Compile Include="IStorageTrainee.cs" />
-    <Compile Include="ITraineeModel.cs" />
-    <Compile Include="MySQLTraineeManager.cs" />
+    <Compile Include="Instructors\IInstructorManager.cs" />
+    <Compile Include="Instructors\Instructor.cs" />
+    <Compile Include="Instructors\InstructorManager.cs" />
+    <Compile Include="Trainees\IStorageTrainee.cs" />
+    <Compile Include="Trainees\ITraineeModel.cs" />
+    <Compile Include="Trainees\MySQLTraineeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLInstructorManager.cs" />
-    <Compile Include="Trainee.cs" />
-    <Compile Include="TraineeDBManager.cs" />
+    <Compile Include="Instructors\SQLInstructorManager.cs" />
+    <Compile Include="Trainees\Trainee.cs" />
+    <Compile Include="Trainees\TraineeDBManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

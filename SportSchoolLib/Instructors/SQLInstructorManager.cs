@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SportSchoolLib
 {
-    public class SQLInstructorManager
+    public class SQLInstructorManager: IInstructorManager
     {
         MySqlConnection conn;
 
@@ -73,7 +73,7 @@ namespace SportSchoolLib
                         int rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            return "Тренер успешно добавлен";
+                            return "Новый тренер успешно добавлен";
                         }
                         else
                         {

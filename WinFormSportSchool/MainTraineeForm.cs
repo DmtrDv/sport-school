@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace WinFormSportSchool
 {
-    public partial class MainForm : Form
+    public partial class MainTraineeForm : Form
     {
         MySQLTraineeManager traineeManager = new MySQLTraineeManager();
-        public MainForm()
+        public MainTraineeForm()
         {
             InitializeComponent();
         }
