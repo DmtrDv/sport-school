@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Окт 20 2025 г., 22:27
+-- Время создания: Ноя 17 2025 г., 18:42
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.1.26
 
@@ -45,11 +45,19 @@ CREATE TABLE `competitions` (
 --
 
 CREATE TABLE `instructor` (
-  `Id_instructor` int(11) DEFAULT NULL,
+  `Id_instructor` int(11) NOT NULL,
   `FIOInstructor` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `qualification` enum('Высшая','первая','вторая') COLLATE utf8_bin DEFAULT NULL,
-  `NumberPhoneInstructor` varchar(11) COLLATE utf8_bin DEFAULT NULL
+  `qualification` enum('Высшая','Первая','Вторая') COLLATE utf8_bin DEFAULT NULL,
+  `NumberPhoneInstructor` varchar(11) COLLATE utf8_bin DEFAULT NULL,
+  `Section` varchar(255) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Дамп данных таблицы `instructor`
+--
+
+INSERT INTO `instructor` (`Id_instructor`, `FIOInstructor`, `qualification`, `NumberPhoneInstructor`, `Section`) VALUES
+(1, 'Иванов Иван Иванович', 'Первая', '78945612310', 'Спортивный_туризм');
 
 -- --------------------------------------------------------
 
@@ -100,11 +108,18 @@ INSERT INTO `trainee` (`Id_Trainee`, `FIO`, `Birthday`, `Section`, `Category`, `
 (1, 'Петров Пётр Петрович', '1999-01-01', 'Спортивный туризм', 'I юношеский спортивный разряд', 'Петров Пётр Николаевич', '88005553535'),
 (2, 'Иванов Иван Иванович', '2015-06-21', 'скалолазание', 'I_юношеский_спортивный_разряд', 'Иванов Иван Петрович', '79007009070'),
 (3, 'Артёмов Артём Артёмович', '2007-02-08', 'гребля', 'отсутствует', 'Артёмов Артём Петрович', '99008007060'),
-(4, 'Дмитров Дмитрий Дмитриевич', '2025-10-21', 'гребля', 'III_юношеский_спортивный_разряд', 'Дмитров Дмитрий Дмитриевич', '88888888888');
+(4, 'Дмитров Дмитрий Дмитриевич', '2025-10-21', 'гребля', 'III_юношеский_спортивный_разряд', 'Дмитров Дмитрий Дмитриевич', '88888888888'),
+(5, 'укеанпгрошл', '2025-11-11', 'Скалолазание', 'III_спортивный_разряд', 'ывапролджэ', '8945632123');
 
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `instructor`
+--
+ALTER TABLE `instructor`
+  ADD PRIMARY KEY (`Id_instructor`);
 
 --
 -- Индексы таблицы `trainee`
@@ -117,10 +132,16 @@ ALTER TABLE `trainee`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `instructor`
+--
+ALTER TABLE `instructor`
+  MODIFY `Id_instructor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT для таблицы `trainee`
 --
 ALTER TABLE `trainee`
-  MODIFY `Id_Trainee` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id_Trainee` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
