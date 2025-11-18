@@ -42,16 +42,18 @@
             // 
             // FIO_textBox
             // 
-            this.FIO_textBox.Location = new System.Drawing.Point(135, 25);
+            this.FIO_textBox.Location = new System.Drawing.Point(101, 20);
+            this.FIO_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FIO_textBox.Name = "FIO_textBox";
-            this.FIO_textBox.Size = new System.Drawing.Size(177, 22);
+            this.FIO_textBox.Size = new System.Drawing.Size(134, 20);
             this.FIO_textBox.TabIndex = 0;
             // 
             // PhoneNumber_textBox
             // 
-            this.PhoneNumber_textBox.Location = new System.Drawing.Point(135, 101);
+            this.PhoneNumber_textBox.Location = new System.Drawing.Point(101, 82);
+            this.PhoneNumber_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PhoneNumber_textBox.Name = "PhoneNumber_textBox";
-            this.PhoneNumber_textBox.Size = new System.Drawing.Size(177, 22);
+            this.PhoneNumber_textBox.Size = new System.Drawing.Size(134, 20);
             this.PhoneNumber_textBox.TabIndex = 1;
             // 
             // Qualification_comboBox
@@ -61,60 +63,67 @@
             "Первая",
             "Вторая",
             "Высшая"});
-            this.Qualification_comboBox.Location = new System.Drawing.Point(135, 62);
+            this.Qualification_comboBox.Location = new System.Drawing.Point(101, 50);
+            this.Qualification_comboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Qualification_comboBox.Name = "Qualification_comboBox";
-            this.Qualification_comboBox.Size = new System.Drawing.Size(177, 24);
+            this.Qualification_comboBox.Size = new System.Drawing.Size(134, 21);
             this.Qualification_comboBox.TabIndex = 2;
             // 
             // Section_comboBox
             // 
             this.Section_comboBox.FormattingEnabled = true;
-            this.Section_comboBox.Location = new System.Drawing.Point(135, 142);
+            this.Section_comboBox.Location = new System.Drawing.Point(101, 115);
+            this.Section_comboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Section_comboBox.Name = "Section_comboBox";
-            this.Section_comboBox.Size = new System.Drawing.Size(177, 24);
+            this.Section_comboBox.Size = new System.Drawing.Size(134, 21);
             this.Section_comboBox.TabIndex = 3;
             // 
             // FIOInstructor_label
             // 
             this.FIOInstructor_label.AutoSize = true;
-            this.FIOInstructor_label.Location = new System.Drawing.Point(82, 28);
+            this.FIOInstructor_label.Location = new System.Drawing.Point(62, 23);
+            this.FIOInstructor_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FIOInstructor_label.Name = "FIOInstructor_label";
-            this.FIOInstructor_label.Size = new System.Drawing.Size(38, 16);
+            this.FIOInstructor_label.Size = new System.Drawing.Size(34, 13);
             this.FIOInstructor_label.TabIndex = 4;
             this.FIOInstructor_label.Text = "ФИО";
             // 
             // Qualification_label
             // 
             this.Qualification_label.AutoSize = true;
-            this.Qualification_label.Location = new System.Drawing.Point(16, 65);
+            this.Qualification_label.Location = new System.Drawing.Point(12, 53);
+            this.Qualification_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Qualification_label.Name = "Qualification_label";
-            this.Qualification_label.Size = new System.Drawing.Size(104, 16);
+            this.Qualification_label.Size = new System.Drawing.Size(82, 13);
             this.Qualification_label.TabIndex = 5;
             this.Qualification_label.Text = "Квалификация";
             // 
             // PhoneNumberInstructor_label
             // 
             this.PhoneNumberInstructor_label.AutoSize = true;
-            this.PhoneNumberInstructor_label.Location = new System.Drawing.Point(1, 104);
+            this.PhoneNumberInstructor_label.Location = new System.Drawing.Point(1, 84);
+            this.PhoneNumberInstructor_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PhoneNumberInstructor_label.Name = "PhoneNumberInstructor_label";
-            this.PhoneNumberInstructor_label.Size = new System.Drawing.Size(119, 16);
+            this.PhoneNumberInstructor_label.Size = new System.Drawing.Size(93, 13);
             this.PhoneNumberInstructor_label.TabIndex = 6;
             this.PhoneNumberInstructor_label.Text = "Номер телефона";
             // 
             // Section_label
             // 
             this.Section_label.AutoSize = true;
-            this.Section_label.Location = new System.Drawing.Point(66, 142);
+            this.Section_label.Location = new System.Drawing.Point(50, 115);
+            this.Section_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Section_label.Name = "Section_label";
-            this.Section_label.Size = new System.Drawing.Size(54, 16);
+            this.Section_label.Size = new System.Drawing.Size(44, 13);
             this.Section_label.TabIndex = 7;
             this.Section_label.Text = "Секция";
             // 
             // Add_Instructor_button
             // 
-            this.Add_Instructor_button.Location = new System.Drawing.Point(39, 199);
+            this.Add_Instructor_button.Location = new System.Drawing.Point(29, 162);
+            this.Add_Instructor_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Add_Instructor_button.Name = "Add_Instructor_button";
-            this.Add_Instructor_button.Size = new System.Drawing.Size(85, 30);
+            this.Add_Instructor_button.Size = new System.Drawing.Size(64, 24);
             this.Add_Instructor_button.TabIndex = 8;
             this.Add_Instructor_button.Text = "Добавить";
             this.Add_Instructor_button.UseVisualStyleBackColor = true;
@@ -122,9 +131,10 @@
             // 
             // Cancel_button
             // 
-            this.Cancel_button.Location = new System.Drawing.Point(169, 199);
+            this.Cancel_button.Location = new System.Drawing.Point(127, 162);
+            this.Cancel_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cancel_button.Name = "Cancel_button";
-            this.Cancel_button.Size = new System.Drawing.Size(85, 30);
+            this.Cancel_button.Size = new System.Drawing.Size(64, 24);
             this.Cancel_button.TabIndex = 9;
             this.Cancel_button.Text = "Отмена";
             this.Cancel_button.UseVisualStyleBackColor = true;
@@ -132,9 +142,9 @@
             // 
             // AddInstructorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 264);
+            this.ClientSize = new System.Drawing.Size(241, 214);
             this.Controls.Add(this.Cancel_button);
             this.Controls.Add(this.Add_Instructor_button);
             this.Controls.Add(this.Section_label);
@@ -146,10 +156,11 @@
             this.Controls.Add(this.PhoneNumber_textBox);
             this.Controls.Add(this.FIO_textBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddInstructorForm";
-            this.Text = "AddInstructorForm";
+            this.Text = "Добавить тренера";
             this.ResumeLayout(false);
             this.PerformLayout();
 

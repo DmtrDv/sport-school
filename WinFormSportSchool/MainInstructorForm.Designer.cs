@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.AddInstructor_toolStripButton = new System.Windows.Forms.ToolStripButton();
             this.InstructorsList_dataGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.AddInstructor_toolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InstructorsList_dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -44,27 +44,9 @@
             this.AddInstructor_toolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(839, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(629, 47);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // InstructorsList_dataGridView
-            // 
-            this.InstructorsList_dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.InstructorsList_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.InstructorsList_dataGridView.Location = new System.Drawing.Point(12, 46);
-            this.InstructorsList_dataGridView.Name = "InstructorsList_dataGridView";
-            this.InstructorsList_dataGridView.RowHeadersWidth = 51;
-            this.InstructorsList_dataGridView.RowTemplate.Height = 24;
-            this.InstructorsList_dataGridView.Size = new System.Drawing.Size(814, 159);
-            this.InstructorsList_dataGridView.TabIndex = 1;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // AddInstructor_toolStripButton
             // 
@@ -78,15 +60,37 @@
             this.AddInstructor_toolStripButton.Text = "Добавить тренера";
             this.AddInstructor_toolStripButton.Click += new System.EventHandler(this.AddInstructor_toolStripButton_Click);
             // 
+            // InstructorsList_dataGridView
+            // 
+            this.InstructorsList_dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.InstructorsList_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.InstructorsList_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.InstructorsList_dataGridView.Location = new System.Drawing.Point(8, 49);
+            this.InstructorsList_dataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.InstructorsList_dataGridView.Name = "InstructorsList_dataGridView";
+            this.InstructorsList_dataGridView.RowHeadersWidth = 51;
+            this.InstructorsList_dataGridView.RowTemplate.Height = 24;
+            this.InstructorsList_dataGridView.Size = new System.Drawing.Size(610, 175);
+            this.InstructorsList_dataGridView.TabIndex = 1;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // MainInstructorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 450);
+            this.ClientSize = new System.Drawing.Size(629, 236);
             this.Controls.Add(this.InstructorsList_dataGridView);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainInstructorForm";
-            this.Text = "MainInstructorForm";
+            this.Text = "Педагогический состав";
             this.Load += new System.EventHandler(this.MainInstructorForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
