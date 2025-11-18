@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TInstructorManager.cs" />
+    <Compile Include="TInventoryManager.cs" />
     <Compile Include="TStorageTrainee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
