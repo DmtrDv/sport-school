@@ -8,7 +8,12 @@ namespace SportSchoolLib.Inventors
 {
     public class InventoryManager
     {
-        public string AddInventory()
+        private IInventoryManager storage_;
+        public InventoryManager(IInventoryManager storage)
+        {
+            storage_ = storage;
+        }
+        public string AddInventory(Inventory inventory)
         {
             return "";
         }
