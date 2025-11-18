@@ -107,6 +107,7 @@
     <Compile Include="Instructors\Instructor.cs" />
     <Compile Include="Instructors\InstructorManager.cs" />
     <Compile Include="Inventors\Inventory.cs" />
+    <Compile Include="Inventors\InventoryManager.cs" />
     <Compile Include="Trainees\IStorageTrainee.cs" />
     <Compile Include="Trainees\ITraineeModel.cs" />
     <Compile Include="Trainees\MySQLTraineeManager.cs" />
