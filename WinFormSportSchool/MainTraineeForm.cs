@@ -13,7 +13,7 @@ namespace WinFormSportSchool
 {
     public partial class MainTraineeForm : Form
     {
-        MySQLTraineeManager traineeManager = new MySQLTraineeManager();
+        SQLTraineeManager traineeManager = new SQLTraineeManager();
         public MainTraineeForm()
         {
             InitializeComponent();
