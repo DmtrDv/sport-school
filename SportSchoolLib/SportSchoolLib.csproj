@@ -106,10 +106,10 @@
     <Compile Include="Instructors\IInstructorManager.cs" />
     <Compile Include="Instructors\Instructor.cs" />
     <Compile Include="Instructors\InstructorManager.cs" />
-    <Compile Include="Inventors\IInventoryManager.cs" />
-    <Compile Include="Inventors\Inventory.cs" />
-    <Compile Include="Inventors\InventoryManager.cs" />
-    <Compile Include="Inventors\SQLInventoryManager.cs" />
+    <Compile Include="Inventories\IInventoryManager.cs" />
+    <Compile Include="Inventories\Inventory.cs" />
+    <Compile Include="Inventories\InventoryManager.cs" />
+    <Compile Include="Inventories\SQLInventoryManager.cs" />
     <Compile Include="Trainees\IStorageTrainee.cs" />
     <Compile Include="Trainees\ITraineeModel.cs" />
     <Compile Include="Trainees\SQLTraineeManager.cs" />
