@@ -42,5 +42,38 @@ namespace SportSchoolLib.Inventors
             }
             return result;
         }
+        public string AddInventory(Inventory inventory)
+        {
+            using (MySqlConnection conn = new MySqlConnection(AppSettings.ConnectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    const string request = @"INSERT INTO inventory 
+                                           (NameInventory, CountInventory, DateDelivery )
+                                            VALUES (@NameInventory, @CountInventory, @DateDelivery )";
+                    using (MySqlCommand command = new MySqlCommand(request, conn))
+                    {
+                        command.Parameters.AddWithValue("@NameInventory", inventory.Name_Inventory);
+                        command.Parameters.AddWithValue("@CountInventory", inventory.Count_Inventory);
+                        command.Parameters.AddWithValue("@DateDelivery", inventory.DateDelivery);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            return "Новая запись успешно добавлена";
+                        }
+                        else
+                        {
+                            return "Ошибка: запись не была добавлена";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return "Ошибка при добавлении: " + ex;
+                }
+            }
+        }
     }
 }
