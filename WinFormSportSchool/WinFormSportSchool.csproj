@@ -104,6 +104,12 @@
     <Compile Include="instructor\AddInstructorForm.Designer.cs">
       <DependentUpon>AddInstructorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="inventories\MainInventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventories\MainInventoryForm.Designer.cs">
+      <DependentUpon>MainInventoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="trainee\AddTraineeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="instructor\AddInstructorForm.resx">
       <DependentUpon>AddInstructorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventories\MainInventoryForm.resx">
+      <DependentUpon>MainInventoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="trainee\AddTraineeForm.resx">
       <DependentUpon>AddTraineeForm.cs</DependentUpon>
@@ -172,8 +181,6 @@
   <ItemGroup>
     <None Include="Resources\button_Delete.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="inventories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
