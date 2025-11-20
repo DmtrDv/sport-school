@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Ноя 17 2025 г., 18:42
+-- Время создания: Ноя 20 2025 г., 22:02
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.1.26
 
@@ -66,10 +66,18 @@ INSERT INTO `instructor` (`Id_instructor`, `FIOInstructor`, `qualification`, `Nu
 --
 
 CREATE TABLE `inventory` (
-  `Inventory_number` int(11) DEFAULT NULL,
-  `Name_inventory` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `Status` enum('Списан','в эксплуатации') COLLATE utf8_bin DEFAULT NULL
+  `IdInventory` int(11) NOT NULL,
+  `NameInventory` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `CountInventory` int(11) DEFAULT NULL,
+  `DateDelivery` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Дамп данных таблицы `inventory`
+--
+
+INSERT INTO `inventory` (`IdInventory`, `NameInventory`, `CountInventory`, `DateDelivery`) VALUES
+(1, 'Карабин (GURU)', 12, '2025-11-19');
 
 -- --------------------------------------------------------
 
@@ -108,8 +116,7 @@ INSERT INTO `trainee` (`Id_Trainee`, `FIO`, `Birthday`, `Section`, `Category`, `
 (1, 'Петров Пётр Петрович', '1999-01-01', 'Спортивный туризм', 'I юношеский спортивный разряд', 'Петров Пётр Николаевич', '88005553535'),
 (2, 'Иванов Иван Иванович', '2015-06-21', 'скалолазание', 'I_юношеский_спортивный_разряд', 'Иванов Иван Петрович', '79007009070'),
 (3, 'Артёмов Артём Артёмович', '2007-02-08', 'гребля', 'отсутствует', 'Артёмов Артём Петрович', '99008007060'),
-(4, 'Дмитров Дмитрий Дмитриевич', '2025-10-21', 'гребля', 'III_юношеский_спортивный_разряд', 'Дмитров Дмитрий Дмитриевич', '88888888888'),
-(5, 'укеанпгрошл', '2025-11-11', 'Скалолазание', 'III_спортивный_разряд', 'ывапролджэ', '8945632123');
+(4, 'Дмитров Дмитрий Дмитриевич', '2025-10-21', 'гребля', 'III_юношеский_спортивный_разряд', 'Дмитров Дмитрий Дмитриевич', '88888888888');
 
 --
 -- Индексы сохранённых таблиц
@@ -120,6 +127,12 @@ INSERT INTO `trainee` (`Id_Trainee`, `FIO`, `Birthday`, `Section`, `Category`, `
 --
 ALTER TABLE `instructor`
   ADD PRIMARY KEY (`Id_instructor`);
+
+--
+-- Индексы таблицы `inventory`
+--
+ALTER TABLE `inventory`
+  ADD PRIMARY KEY (`IdInventory`);
 
 --
 -- Индексы таблицы `trainee`
@@ -138,10 +151,16 @@ ALTER TABLE `instructor`
   MODIFY `Id_instructor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT для таблицы `inventory`
+--
+ALTER TABLE `inventory`
+  MODIFY `IdInventory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT для таблицы `trainee`
 --
 ALTER TABLE `trainee`
-  MODIFY `Id_Trainee` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id_Trainee` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
