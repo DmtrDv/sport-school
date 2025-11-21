@@ -19,6 +19,7 @@ namespace WinFormSportSchool.inventories
         {
             InitializeComponent();
             inventoryManager_ = inventoryManager;
+            
 
         }
 
