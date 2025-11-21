@@ -34,6 +34,11 @@ namespace WinFormSportSchool.inventories
 
         private void AddInventory_toolStripButton_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             InventoryManager inventoryManager = new InventoryManager(SqlInventoryManager);
             AddInvetoryForm addInventoryForm = new AddInvetoryForm(inventoryManager);
             if (addInventoryForm.ShowDialog() == DialogResult.OK)
