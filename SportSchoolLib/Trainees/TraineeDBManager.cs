@@ -10,14 +10,14 @@ namespace SportSchoolLib
     {
         private IStorageTrainee storage_;
         private List<Trainee> trainees_;
-        private MySQLTraineeManager traineeManager;
+        private SQLTraineeManager traineeManager;
 
         public TraineeDBManager(IStorageTrainee storage)
         {
             storage_ = storage;
         }
 
-        public TraineeDBManager(MySQLTraineeManager traineeManager)
+        public TraineeDBManager(SQLTraineeManager traineeManager)
         {
             this.traineeManager = traineeManager;
         }

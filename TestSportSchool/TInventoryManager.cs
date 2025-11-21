@@ -42,10 +42,8 @@ namespace TestSportSchool
         }
         [TestMethod]
         [DataRow("", 10, 2025, 11, 15, "Введите наименование инвентаря")]
-        [DataRow("Карабин (GURU)", null, 2025, 11, 15, "Введите корректное количество инвентаря")]
         [DataRow("Карабин (GURU)", 0, 2025, 11, 15, "Введите корректное количество инвентаря")]
         [DataRow("Карабин (GURU)", -1, 2025, 11, 15, "Введите корректное количество инвентаря")]
-        [DataRow("Карабин (GURU)", 10, null, null, null, "Введите дату поставки инвентаря")]
         public void TestAddInventory_invalidData(string name, int count, int year, int month, int day, string expectedResult)
         {
             var mockrep = new Mock<IInventoryManager>();

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SportSchoolLib
 {
-    public class MySQLTraineeManager: ITraineeModel
+    public class SQLTraineeManager: ITraineeModel
     {
         string connectionString =  "server=127.0.0.1;uid=root;pwd=vertrigo;database=sport_school;";
         public List<Trainee> GetListTrainee()

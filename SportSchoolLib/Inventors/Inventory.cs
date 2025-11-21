@@ -12,5 +12,10 @@ namespace SportSchoolLib
         public string Name_Inventory { get; set; } // наименование инвентаря 
         public int Count_Inventory { get; set; }// количество инвентаря
         public DateTime DateDelivery { get; set; } // дата поставки инвентаря
+        public Inventory() { }
+        public Inventory(int Id)
+        {
+            Id_Inventory = Id;
+        }
     }
 }
