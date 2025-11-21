@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -98,42 +98,60 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddInstructorForm.cs">
+    <Compile Include="instructor\AddInstructorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddInstructorForm.Designer.cs">
+    <Compile Include="instructor\AddInstructorForm.Designer.cs">
       <DependentUpon>AddInstructorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddTraineeForm.cs">
+    <Compile Include="inventories\AddInvetoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddTraineeForm.Designer.cs">
+    <Compile Include="inventories\AddInvetoryForm.Designer.cs">
+      <DependentUpon>AddInvetoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventories\MainInventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventories\MainInventoryForm.Designer.cs">
+      <DependentUpon>MainInventoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="trainee\AddTraineeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trainee\AddTraineeForm.Designer.cs">
       <DependentUpon>AddTraineeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainTraineeForm.cs">
+    <Compile Include="trainee\MainTraineeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainTraineeForm.Designer.cs">
+    <Compile Include="trainee\MainTraineeForm.Designer.cs">
       <DependentUpon>MainTraineeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainInstructorForm.cs">
+    <Compile Include="instructor\MainInstructorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainInstructorForm.Designer.cs">
+    <Compile Include="instructor\MainInstructorForm.Designer.cs">
       <DependentUpon>MainInstructorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddInstructorForm.resx">
+    <EmbeddedResource Include="instructor\AddInstructorForm.resx">
       <DependentUpon>AddInstructorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddTraineeForm.resx">
+    <EmbeddedResource Include="inventories\AddInvetoryForm.resx">
+      <DependentUpon>AddInvetoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventories\MainInventoryForm.resx">
+      <DependentUpon>MainInventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trainee\AddTraineeForm.resx">
       <DependentUpon>AddTraineeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainTraineeForm.resx">
+    <EmbeddedResource Include="trainee\MainTraineeForm.resx">
       <DependentUpon>MainTraineeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainInstructorForm.resx">
+    <EmbeddedResource Include="instructor\MainInstructorForm.resx">
       <DependentUpon>MainInstructorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -166,9 +184,7 @@
       <Name>SportSchoolLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\button_Add.png" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\button_Delete.png" />
   </ItemGroup>

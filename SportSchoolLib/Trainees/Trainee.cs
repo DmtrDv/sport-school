@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,12 +10,19 @@ namespace SportSchoolLib
 {
     public class Trainee
     {
+        [DisplayName("ИД")]
         public int Id_Trainee { get; set; }
+        [DisplayName("ФИО")]
         public string FIO { get; set; }
+        [DisplayName("Дата рождения")]
         public DateTime Birthday { get; set; }
+        [DisplayName("Секция")]
         public section Section { get; set; }
+        [DisplayName("Разряд")]
         public category Category { get; set; }
+        [DisplayName("ФИО родителя")]
         public string FIOParent { get; set; }
+        [DisplayName("Телефон родителя")]
         public string PhoneNumberParent { get; set; }
         public Trainee() { }
         public Trainee(int Id)

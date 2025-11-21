@@ -73,9 +73,29 @@ namespace WinFormSportSchool.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_Add1 {
+            get {
+                object obj = ResourceManager.GetObject("button_Add1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_Delete {
             get {
                 object obj = ResourceManager.GetObject("button_Delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_Delete1 {
+            get {
+                object obj = ResourceManager.GetObject("button_Delete1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
