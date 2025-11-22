@@ -38,7 +38,7 @@ namespace TestSportSchool
             mockrep.Verify(r => r.AddInventory(testValidInventory), Times.Once);
 
             Assert.IsTrue(repositoryContent.Contains(testValidInventory),
-                "Запись не была сохранена в репозитории");
+                "Запись была сохранена в репозитории");
         }
         [TestMethod]
         [DataRow("", 10, 2025, 11, 15, "Введите наименование инвентаря")]
@@ -57,7 +57,61 @@ namespace TestSportSchool
             var actualResult = testInventory.AddInventory(testInvalidInventory);
 
             Assert.AreEqual(expectedResult, actualResult);
-            mockrep.Verify(r => r.AddInventory(testInvalidInventory), Times.Once);
+            mockrep.Verify(r => r.AddInventory(testInvalidInventory), Times.Never);
+        }
+
+        [TestMethod]
+        public void TestEditInventory_validData()
+        {
+            var mockrep = new Mock<IInventoryManager>();
+            var testInventory = new InventoryManager(mockrep.Object);
+
+            var testValidInventory = new Inventory()
+            {
+                Name_Inventory = "Карабин (GURU)",
+                Count_Inventory = 10,
+                DateDelivery = new DateTime(2025, 11, 15)
+            };
+
+            List<Inventory> repositoryContent = new List<Inventory>();
+
+            mockrep.Setup(r => r.AddInventory(testValidInventory))
+                   .Returns("")
+                   .Callback<Inventory>(inventory => repositoryContent.Add(inventory));
+            var updateData = new Inventory()
+            {
+                Name_Inventory = "Восьмёрка (Vento)",
+                Count_Inventory = 5,
+                DateDelivery = new DateTime(2025, 11, 14)
+            };
+
+            mockrep.Setup(r => r.EditInventory(updateData))
+                   .Returns("Успешно обновлено")
+                   .Callback<Inventory>(inventory => repositoryContent.Add(inventory));
+
+            var actualResult = testInventory.EditInventory(updateData);
+
+            Assert.AreEqual("Успешно обновлено", actualResult);
+            mockrep.Verify(r => r.EditInventory(updateData), Times.Once);
+        }
+        [TestMethod]
+        [DataRow("", 10, 2025, 11, 15, "Введите наименование инвентаря")]
+        [DataRow("Карабин (GURU)", 0, 2025, 11, 15, "Введите корректное количество инвентаря")]
+        [DataRow("Карабин (GURU)", -1, 2025, 11, 15, "Введите корректное количество инвентаря")]
+        public void TestEditInventory_invalidData(string name, int count, int year, int month, int day, string expectedResult)
+        {
+            var mockrep = new Mock<IInventoryManager>();
+            var testInventory = new InventoryManager(mockrep.Object);
+            var testInvalidInventory = new Inventory()
+            {
+                Name_Inventory = name,
+                Count_Inventory = count,
+                DateDelivery = new DateTime(year, month, day)
+            };
+            var actualResult = testInventory.EditInventory(testInvalidInventory);
+
+            Assert.AreEqual(expectedResult, actualResult);
+            mockrep.Verify(r => r.EditInventory(testInvalidInventory), Times.Never);
         }
     }
 }
