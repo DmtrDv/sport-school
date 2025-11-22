@@ -42,5 +42,28 @@ namespace WinFormSportSchool.inventories
                 InventoryList_dataGridView.DataSource = SqlInventoryManager.GetInventories();
             }
         }
+
+        private void Edit_button_Click(object sender, EventArgs e)
+        {
+            if (InventoryList_dataGridView.SelectedRows.Count > 0)
+            {
+                Inventory selectedInventory = InventoryList_dataGridView.SelectedRows[0].DataBoundItem as Inventory;
+
+                Inventory editingInventory = selectedInventory.Clone();
+                InventoryManager inventoryManager = new InventoryManager(SqlInventoryManager);
+                EditInventoryForm editInventoryForm = new EditInventoryForm(inventoryManager, editingInventory);
+                if (editInventoryForm.ShowDialog() == DialogResult.OK)
+                {
+                    selectedInventory.Name_Inventory = editingInventory.Name_Inventory;
+                    selectedInventory.Count_Inventory = editingInventory.Count_Inventory;
+                    selectedInventory.DateDelivery = editingInventory.DateDelivery;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите инвентарь для редактирования", "Внимание",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
