@@ -29,11 +29,11 @@ namespace SportSchoolLib.Inventors
         }
         public string EditInventory(Inventory inventory)
         {
-            if (string.IsNullOrEmpty(inventory.Name_Inventory))
+            if (string.IsNullOrEmpty(inventory.Name_Inventory)) //проверка на пустое название
             {
                 return "Введите наименование инвентаря";
             }
-            if (inventory.Count_Inventory == 0 || inventory.Count_Inventory < 0)
+            if (inventory.Count_Inventory == 0 || inventory.Count_Inventory < 0) //проверка на корректное количество инвентаря
             {
                 return "Введите корректное количество инвентаря";
             }
