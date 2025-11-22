@@ -75,7 +75,7 @@ namespace SportSchoolLib.Inventors
                 }
             }
         }
-        public string EditInvetory(Inventory inventory)
+        public string EditInventory(Inventory inventory)
         {
             return "";
         }
