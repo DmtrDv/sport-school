@@ -85,14 +85,14 @@ namespace TestSportSchool
                 DateDelivery = new DateTime(2025, 11, 14)
             };
 
-            mockrep.Setup(r => r.EditInventory(updateData))
+            mockrep.Setup(r => r.UpdateInventory(updateData))
                    .Returns("Успешно обновлено")
                    .Callback<Inventory>(inventory => repositoryContent.Add(inventory));
 
             var actualResult = testInventory.EditInventory(updateData);
 
             Assert.AreEqual("Успешно обновлено", actualResult);
-            mockrep.Verify(r => r.EditInventory(updateData), Times.Once);
+            mockrep.Verify(r => r.UpdateInventory(updateData), Times.Once);
         }
         [TestMethod]
         [DataRow("", 10, 2025, 11, 15, "Введите наименование инвентаря")]
@@ -111,7 +111,7 @@ namespace TestSportSchool
             var actualResult = testInventory.EditInventory(testInvalidInventory);
 
             Assert.AreEqual(expectedResult, actualResult);
-            mockrep.Verify(r => r.EditInventory(testInvalidInventory), Times.Never);
+            mockrep.Verify(r => r.UpdateInventory(testInvalidInventory), Times.Never);
         }
     }
 }

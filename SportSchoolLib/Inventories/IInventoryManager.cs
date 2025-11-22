@@ -9,6 +9,6 @@ namespace SportSchoolLib.Inventors
     public interface IInventoryManager
     {
         string AddInventory(Inventory inventory);
-        string EditInventory(Inventory inventory);
+        string UpdateInventory(Inventory inventory);
     }
 }
