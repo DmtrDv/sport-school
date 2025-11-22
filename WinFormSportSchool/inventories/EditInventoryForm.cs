@@ -12,27 +12,29 @@ using System.Windows.Forms;
 
 namespace WinFormSportSchool.inventories
 {
-    public partial class AddInvetoryForm: Form
+    public partial class EditInventoryForm: Form
     {
         private InventoryManager inventoryManager_;
-        public AddInvetoryForm(InventoryManager inventoryManager)
+        private Inventory editingInventory_;
+        public EditInventoryForm(InventoryManager manager, Inventory inventory)
         {
             InitializeComponent();
-            inventoryManager_ = inventoryManager;
-            
+            inventoryManager_ = manager;
+            editingInventory_ = inventory;
 
+            Name_textBox.Text = editingInventory_.Name_Inventory;
+            Count_numericUpDown.Value = editingInventory_.Count_Inventory;
+            DateDelivery_dateTimePicker.Value = editingInventory_.DateDelivery;
         }
 
         private void ok_button_Click(object sender, EventArgs e)
         {
-            Inventory inventory = new Inventory()
-            {
-                Name_Inventory = Name_textBox.Text.Trim(),
-                Count_Inventory = (int)Count_numericUpDown.Value,
-                DateDelivery = DateDelivery_dateTimePicker.Value
-            };
-            string res = inventoryManager_.AddInventory(inventory);
-            if (res == "Новая запись успешно добавлена")
+            editingInventory_.Name_Inventory = Name_textBox.Text.Trim();
+            editingInventory_.Count_Inventory = (int)Count_numericUpDown.Value;
+            editingInventory_.DateDelivery = DateDelivery_dateTimePicker.Value;
+
+            string res = inventoryManager_.UpdateInventory(editingInventory_);
+            if (res == "Запись успешно обновлена")
             {
                 DialogResult = DialogResult.OK;
                 Close();

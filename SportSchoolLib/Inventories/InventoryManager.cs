@@ -27,7 +27,7 @@ namespace SportSchoolLib.Inventors
             storage_.AddInventory(inventory);
             return "Новая запись успешно добавлена";
         }
-        public string EditInventory(Inventory inventory)
+        public string UpdateInventory(Inventory inventory)
         {
             if (string.IsNullOrEmpty(inventory.Name_Inventory)) //проверка на пустое название
             {

@@ -116,6 +116,12 @@
     <Compile Include="inventories\AddInvetoryForm.Designer.cs">
       <DependentUpon>AddInvetoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="inventories\EditInventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventories\EditInventoryForm.Designer.cs">
+      <DependentUpon>EditInventoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="inventories\MainInventoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="inventories\AddInvetoryForm.resx">
       <DependentUpon>AddInvetoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventories\EditInventoryForm.resx">
+      <DependentUpon>EditInventoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inventories\MainInventoryForm.resx">
       <DependentUpon>MainInventoryForm.cs</DependentUpon>
