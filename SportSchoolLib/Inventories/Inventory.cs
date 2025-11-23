@@ -61,11 +61,11 @@ namespace SportSchoolLib
             Id_Inventory = Id;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged; //получение уведомления об изменении свойств
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null /*автоматически подставляет имя*/)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName)); //если не null вызываем метод Invoke()
         }
 
         //метод клонирования инвентаря

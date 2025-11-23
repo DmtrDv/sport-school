@@ -48,7 +48,7 @@
             this.ok_button.Location = new System.Drawing.Point(165, 133);
             this.ok_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ok_button.Name = "ok_button";
-            this.ok_button.Size = new System.Drawing.Size(93, 31);
+            this.ok_button.Size = new System.Drawing.Size(100, 32);
             this.ok_button.TabIndex = 0;
             this.ok_button.Text = "Добавить";
             this.ok_button.UseVisualStyleBackColor = false;
@@ -59,10 +59,10 @@
             this.Cancel_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(212)))));
             this.Cancel_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(212)))));
             this.Cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Cancel_button.Location = new System.Drawing.Point(344, 133);
+            this.Cancel_button.Location = new System.Drawing.Point(336, 133);
             this.Cancel_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Cancel_button.Name = "Cancel_button";
-            this.Cancel_button.Size = new System.Drawing.Size(93, 31);
+            this.Cancel_button.Size = new System.Drawing.Size(100, 32);
             this.Cancel_button.TabIndex = 1;
             this.Cancel_button.Text = "Отмена";
             this.Cancel_button.UseVisualStyleBackColor = false;
@@ -112,6 +112,11 @@
             this.Count_numericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Count_numericUpDown.Location = new System.Drawing.Point(165, 46);
             this.Count_numericUpDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Count_numericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.Count_numericUpDown.Name = "Count_numericUpDown";
             this.Count_numericUpDown.Size = new System.Drawing.Size(272, 24);
             this.Count_numericUpDown.TabIndex = 6;
@@ -130,7 +135,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(452, 185);
+            this.ClientSize = new System.Drawing.Size(464, 217);
             this.ControlBox = false;
             this.Controls.Add(this.DateDelivery_dateTimePicker);
             this.Controls.Add(this.Count_numericUpDown);

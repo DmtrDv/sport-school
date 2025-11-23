@@ -38,7 +38,7 @@ namespace SportSchoolLib.Inventors
                 return "Введите корректное количество инвентаря";
             }
 
-            storage_.UpdateInventory(inventory);
+            storage_.UpdateInventory(inventory); //обновляем данные в БД
             return "Запись успешно обновлена";
         }
     }

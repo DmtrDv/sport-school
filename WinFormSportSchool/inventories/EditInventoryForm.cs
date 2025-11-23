@@ -24,16 +24,16 @@ namespace WinFormSportSchool.inventories
 
             Name_textBox.Text = editingInventory_.Name_Inventory;
             Count_numericUpDown.Value = editingInventory_.Count_Inventory;
-            DateDelivery_dateTimePicker.Value = editingInventory_.DateDelivery;
+            DateDelivery_dateTimePicker.Value = editingInventory_.DateDelivery; //получение данных в форму 
         }
 
         private void ok_button_Click(object sender, EventArgs e)
         {
             editingInventory_.Name_Inventory = Name_textBox.Text.Trim();
             editingInventory_.Count_Inventory = (int)Count_numericUpDown.Value;
-            editingInventory_.DateDelivery = DateDelivery_dateTimePicker.Value;
+            editingInventory_.DateDelivery = DateDelivery_dateTimePicker.Value; //получение данных из формы
 
-            string res = inventoryManager_.UpdateInventory(editingInventory_);
+            string res = inventoryManager_.UpdateInventory(editingInventory_); //если результат корректный, то сохраняем его и передаём значение DialogResult == OK
             if (res == "Запись успешно обновлена")
             {
                 DialogResult = DialogResult.OK;
@@ -45,7 +45,7 @@ namespace WinFormSportSchool.inventories
             }
         }
 
-        private void Cancel_button_Click(object sender, EventArgs e)
+        private void Cancel_button_Click(object sender, EventArgs e) // отмена действий
         {
             DialogResult = DialogResult.Cancel;
             Close();
