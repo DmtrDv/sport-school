@@ -117,6 +117,7 @@
     <Compile Include="Instructors\SQLInstructorManager.cs" />
     <Compile Include="Trainees\Trainee.cs" />
     <Compile Include="Trainees\TraineeDBManager.cs" />
+    <Compile Include="WrittenOffInventory\IWrittenOffManager.cs" />
     <Compile Include="WrittenOffInventory\WrittenOffInventory.cs" />
   </ItemGroup>
   <ItemGroup>
