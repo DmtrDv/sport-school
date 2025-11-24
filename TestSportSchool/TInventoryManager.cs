@@ -91,7 +91,7 @@ namespace TestSportSchool
 
             var actualResult = testInventory.UpdateInventory(updateData);
 
-            Assert.AreEqual("Успешно обновлено", actualResult);
+            Assert.AreEqual("Запись успешно обновлена", actualResult);
             mockrep.Verify(r => r.UpdateInventory(updateData), Times.Once);
         }
         [TestMethod]
