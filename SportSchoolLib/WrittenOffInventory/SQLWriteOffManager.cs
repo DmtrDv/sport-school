@@ -33,7 +33,7 @@ namespace SportSchoolLib.WrittenOffInventory
 
                 if (writeOffCount == inventory.Count_Inventory)
                 {
-                    const string deleteQuery = "DELETE FROM inventory WHERE IdInventory";
+                    const string deleteQuery = "DELETE FROM inventory WHERE IdInventory = @IdInventory";
                     using (MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, conn))
                     {
                         deleteCommand.Parameters.AddWithValue("@IdInventory", inventory.Id_Inventory);
