@@ -63,5 +63,15 @@ namespace WinFormSportSchool.inventories
                 MessageBox.Show("Выберите инвентарь для списания", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void Archive_button_Click(object sender, EventArgs e)
+        {
+            ArchiveForm archiveForm = new ArchiveForm();
+            Hide();
+            if(archiveForm.ShowDialog() == DialogResult.OK)
+            {
+                this.Show();
+            }
+        }
     }
 }

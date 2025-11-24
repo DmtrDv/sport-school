@@ -78,7 +78,7 @@
             this.Add_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
             this.Add_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Add_button.Location = new System.Drawing.Point(13, 15);
-            this.Add_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Add_button.Margin = new System.Windows.Forms.Padding(4);
             this.Add_button.Name = "Add_button";
             this.Add_button.Size = new System.Drawing.Size(123, 30);
             this.Add_button.TabIndex = 2;
@@ -112,6 +112,7 @@
             this.Archive_button.TabIndex = 4;
             this.Archive_button.Text = "Архив";
             this.Archive_button.UseVisualStyleBackColor = false;
+            this.Archive_button.Click += new System.EventHandler(this.Archive_button_Click);
             // 
             // MainInventoryForm
             // 

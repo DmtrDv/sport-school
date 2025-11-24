@@ -31,7 +31,7 @@ namespace WinFormSportSchool.inventories
             int writeOffCount = (int)count_numericUpDown.Value;
 
             DialogResult result = MessageBox.Show(
-                $"Вы уверены, что хотите списать {writeOffCount} единиц инвентаря {selectedInventory_.Name_Inventory}?",
+                $"Вы уверены, что хотите списать {writeOffCount} единиц инвентаря: {selectedInventory_.Name_Inventory}?",
                 "Подтверждение списания", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
