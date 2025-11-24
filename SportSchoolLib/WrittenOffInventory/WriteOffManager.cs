@@ -23,7 +23,8 @@ namespace SportSchoolLib.WrittenOffInventory
             if (writeOffCount > inventory.Count_Inventory)
                 return $"Нельзя списать больше {inventory.Count_Inventory} единиц инвентаря";
 
-            return storage_.WriteOffInventory(inventory, writeOffCount);
+            storage_.WriteOffInventory(inventory, writeOffCount);
+            return "Инвентарь успешно списан";
         }
     }
 }
