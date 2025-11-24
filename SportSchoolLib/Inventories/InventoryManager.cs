@@ -27,5 +27,9 @@ namespace SportSchoolLib.Inventors
             storage_.AddInventory(inventory);
             return "Новая запись успешно добавлена";
         }
+        public string WriteOffInventory(Inventory inventory)
+        {
+            return "Инвентарь успешно списан";
+        }
     }
 }
