@@ -15,6 +15,8 @@ namespace SportSchoolLib.WrittenOffInventory
         {
             try
             {
+                conn = new MySqlConnection(AppSettings.ConnectionString);
+                conn.Open();
                 const string request = @"INSERT INTO written_off_inventory 
                                        (NameInventory, CountWrittenOff, WriteOffDate, OriginalInventoryId)
                                        VALUES (@NameInventory, @CountWrittenOff, @WriteOffDate, @OriginalInventoryId)";
@@ -56,6 +58,39 @@ namespace SportSchoolLib.WrittenOffInventory
             {
                 return "Ошибка при списании: " + ex.Message;
             }
+        }
+        public List<WrittenOffInventory> GetWrittenOffArchive()
+        {
+            List<WrittenOffInventory> result = new List<WrittenOffInventory>();
+            try
+            {
+                conn = new MySqlConnection(AppSettings.ConnectionString);
+                conn.Open();
+                const string query = @"SELECT IdWrittenOff, NameInventory, 
+                                              CountWrittenOff, WriteOffDate, OriginalInventoryId 
+                                       FROM written_off_inventory";
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        WrittenOffInventory writeOff = new WrittenOffInventory
+                        {
+                            Id_WrittenOff = reader.GetInt32("IdWrittenOff"),
+                            Name_Inventory = reader.GetString("NameInventory"),
+                            Count_WrittenOff = reader.GetInt32("CountWrittenOff"),
+                            WriteOffDate = reader.GetDateTime("WriteOffDate"),
+                            OriginalInventoryId = reader.GetInt32("OriginalInventoryId")
+                        };
+                        result.Add(writeOff);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception("Ошибка при загрузке истории списаний: " + ex.Message);
+            }
+            return result;
         }
     }
 }
