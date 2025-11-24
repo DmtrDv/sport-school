@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace SportSchoolLib.WrittenOffInventory
 {
-    public class SQLWriteOffManager
+    public class SQLWriteOffManager: IWriteOffManager
     {
         MySqlConnection conn;
 
-        public string WrittenOffInventory(Inventory inventory, int writeOffCount)
+        public string WriteOffInventory(Inventory inventory, int writeOffCount)
         {
             try
             {

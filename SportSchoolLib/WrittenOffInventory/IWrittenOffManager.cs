@@ -9,6 +9,6 @@ namespace SportSchoolLib.WrittenOffInventory
     public interface IWriteOffManager
     {
         string WriteOffInventory(Inventory inventory, int writeOffCount);
-        List<WrittenOffInventory> GetWriteOffHistory();
+        List<WrittenOffInventory> GetWrittenOffArchive();
     }
 }
