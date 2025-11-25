@@ -87,7 +87,7 @@ namespace SportSchoolLib.Inventors
                                           SET NameInventory = @NameInventory, CountInventory = @CountInventory, DateDelivery = @DateDelivery
                                           WHERE IdInventory = @IdInventory"; // запрос на обновление
                     using (MySqlCommand command = new MySqlCommand(query, conn))
-                    {
+                    {                                                                           //передаём параметры
                         command.Parameters.AddWithValue("@IdInventory", inventory.Id_Inventory);
                         command.Parameters.AddWithValue("@NameInventory", inventory.Name_Inventory);
                         command.Parameters.AddWithValue("@CountInventory", inventory.Count_Inventory);
