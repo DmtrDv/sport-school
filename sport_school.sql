@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Ноя 24 2025 г., 21:51
+-- Время создания: Ноя 25 2025 г., 08:20
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.1.26
 
@@ -57,7 +57,10 @@ CREATE TABLE `instructor` (
 --
 
 INSERT INTO `instructor` (`Id_instructor`, `FIOInstructor`, `qualification`, `NumberPhoneInstructor`, `Section`) VALUES
-(1, 'Иванов Иван Иванович', 'Первая', '78945612310', 'Спортивный_туризм');
+(1, 'Иванов Иван Иванович', 'Первая', '78945612310', 'Спортивный_туризм'),
+(2, 'Николаев Пётр Львович', 'Вторая', '78945612333', 'Скалолазание'),
+(3, 'Трубов Даниил Захарович', 'Высшая', '78965412355', 'Гребля'),
+(4, 'Петров Пётр Петрович', 'Первая', '78945631200', 'Скалолазание');
 
 -- --------------------------------------------------------
 
@@ -77,9 +80,12 @@ CREATE TABLE `inventory` (
 --
 
 INSERT INTO `inventory` (`IdInventory`, `NameInventory`, `CountInventory`, `DateDelivery`) VALUES
-(1, 'Карабин (GURU)', 1202, '2025-11-19'),
-(2, 'Карабин (Vento)', 121, '2025-11-23'),
-(3, 'Восьмёрка (GURU)', 20, '2025-11-23');
+(8, 'Карабин (GURU)', 10, '2025-11-21'),
+(9, 'Восьмёрка (GURU)', 10, '2025-11-25'),
+(10, 'Жумар (GURU)', 15, '2025-11-25'),
+(11, 'Карабин (Vento)', 10, '2025-11-25'),
+(12, 'Жумар (Vento)', 15, '2025-11-25'),
+(13, 'Восьмёрка (Vento)', 20, '2025-11-25');
 
 -- --------------------------------------------------------
 
@@ -139,7 +145,13 @@ CREATE TABLE `written_off_inventory` (
 --
 
 INSERT INTO `written_off_inventory` (`IdWrittenOff`, `NameInventory`, `CountWrittenOff`, `WriteOffDate`, `OriginalInventoryId`) VALUES
-(1, 'Карабин (GURU)', 10, '2025-11-24 23:37:01', 1);
+(1, 'Карабин (GURU)', 10, '2025-11-24 23:37:01', 1),
+(2, 'Ролик (GURU)', 5, '2025-11-25 08:16:59', 4),
+(3, 'Восьмёрка (Vento)', 5, '2025-11-25 00:00:00', 5),
+(4, 'Карабин', 4, '2025-11-25 00:00:00', 7),
+(5, 'Верёвка 30м', 2, '2025-11-25 00:00:00', 15),
+(6, 'Карабин (GURU)', 10, '2025-11-25 00:00:00', 8),
+(7, 'Верёвка 15м', 5, '2025-11-25 00:00:00', 14);
 
 --
 -- Индексы сохранённых таблиц
@@ -177,13 +189,13 @@ ALTER TABLE `written_off_inventory`
 -- AUTO_INCREMENT для таблицы `instructor`
 --
 ALTER TABLE `instructor`
-  MODIFY `Id_instructor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_instructor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `IdInventory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IdInventory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT для таблицы `trainee`
@@ -195,7 +207,7 @@ ALTER TABLE `trainee`
 -- AUTO_INCREMENT для таблицы `written_off_inventory`
 --
 ALTER TABLE `written_off_inventory`
-  MODIFY `IdWrittenOff` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdWrittenOff` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
