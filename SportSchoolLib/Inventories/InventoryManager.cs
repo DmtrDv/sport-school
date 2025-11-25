@@ -27,18 +27,18 @@ namespace SportSchoolLib.Inventors
             storage_.AddInventory(inventory);
             return "Новая запись успешно добавлена";
         }
-        public string EditInventory(Inventory inventory)
+        public string UpdateInventory(Inventory inventory)
         {
             if (string.IsNullOrEmpty(inventory.Name_Inventory)) //проверка на пустое название
             {
                 return "Введите наименование инвентаря";
             }
-            if (inventory.Count_Inventory == 0 || inventory.Count_Inventory < 0) //проверка на корректное количество инвентаря
+            if (inventory.Count_Inventory <= 0) //проверка на корректное количество инвентаря
             {
                 return "Введите корректное количество инвентаря";
             }
 
-            storage_.UpdateInventory(inventory);
+            storage_.UpdateInventory(inventory); //обновляем данные в БД
             return "Запись успешно обновлена";
         }
     }

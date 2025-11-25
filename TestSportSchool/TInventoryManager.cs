@@ -89,9 +89,9 @@ namespace TestSportSchool
                    .Returns("Успешно обновлено")
                    .Callback<Inventory>(inventory => repositoryContent.Add(inventory));
 
-            var actualResult = testInventory.EditInventory(updateData);
+            var actualResult = testInventory.UpdateInventory(updateData);
 
-            Assert.AreEqual("Успешно обновлено", actualResult);
+            Assert.AreEqual("Запись успешно обновлена", actualResult);
             mockrep.Verify(r => r.UpdateInventory(updateData), Times.Once);
         }
         [TestMethod]
@@ -108,7 +108,7 @@ namespace TestSportSchool
                 Count_Inventory = count,
                 DateDelivery = new DateTime(year, month, day)
             };
-            var actualResult = testInventory.EditInventory(testInvalidInventory);
+            var actualResult = testInventory.UpdateInventory(testInvalidInventory);
 
             Assert.AreEqual(expectedResult, actualResult);
             mockrep.Verify(r => r.UpdateInventory(testInvalidInventory), Times.Never);

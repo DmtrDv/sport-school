@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,9 @@ namespace SportSchoolLib.Inventors
     {
         MySqlConnection conn;
 
-        public List<Inventory> GetInventories()
+        public BindingList<Inventory> GetInventories()
         {
-            List<Inventory> result = new List<Inventory>();
+            BindingList<Inventory> result = new BindingList<Inventory>();
 
             try
             {
@@ -77,22 +78,23 @@ namespace SportSchoolLib.Inventors
         }
         public string UpdateInventory(Inventory inventory)
         {
-            using (MySqlConnection conn = new MySqlConnection(AppSettings.ConnectionString))
+            using (MySqlConnection conn = new MySqlConnection(AppSettings.ConnectionString)) //подключение
             {
                 try
                 {
                     conn.Open();
                     const string query = @"UPDATE inventory 
                                           SET NameInventory = @NameInventory, CountInventory = @CountInventory, DateDelivery = @DateDelivery
-                                          WHERE IdInventory = @IdInventory";
+                                          WHERE IdInventory = @IdInventory"; // запрос на обновление
                     using (MySqlCommand command = new MySqlCommand(query, conn))
-                    {
+                    {                                                                           //передаём параметры
+                        command.Parameters.AddWithValue("@IdInventory", inventory.Id_Inventory);
                         command.Parameters.AddWithValue("@NameInventory", inventory.Name_Inventory);
                         command.Parameters.AddWithValue("@CountInventory", inventory.Count_Inventory);
                         command.Parameters.AddWithValue("@DateDelivery", inventory.DateDelivery);
 
                         int rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                        if (rowsAffected > 0) //проверка на изменение хотя бы одной строки
                         {
                             return "Запись успешно обновлена";
                         }
