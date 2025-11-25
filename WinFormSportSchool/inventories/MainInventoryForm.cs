@@ -1,5 +1,6 @@
 ﻿using SportSchoolLib;
 using SportSchoolLib.Inventors;
+using SportSchoolLib.WrittenOffInventory;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace WinFormSportSchool.inventories
     public partial class MainInventoryForm: Form
     {
         SQLInventoryManager SqlInventoryManager = new SQLInventoryManager();
+        SQLWriteOffManager SqlWriteOffManager = new SQLWriteOffManager();
         public MainInventoryForm()
         {
             InitializeComponent();
@@ -44,12 +46,18 @@ namespace WinFormSportSchool.inventories
             }
         }
 
+        private void WriteOff_button_Click(object sender, EventArgs e)
         private void Edit_button_Click(object sender, EventArgs e)
         {
             if (InventoryList_dataGridView.SelectedRows.Count > 0) //выбрана ли строка для редактирования
             {
                 Inventory selectedInventory = InventoryList_dataGridView.SelectedRows[0].DataBoundItem as Inventory; //получаем выбранную строку
 
+                InventoryManager inventoryManager = new InventoryManager(SqlInventoryManager, SqlWriteOffManager);
+                WriteOffInventoryForm writeOffInventoryForm = new WriteOffInventoryForm(inventoryManager, selectedInventory);
+                if (writeOffInventoryForm.ShowDialog() == DialogResult.OK) // если результат диалога ОК, то
+                {
+                    InventoryList_dataGridView.DataSource = SqlInventoryManager.GetInventories();
                 // Если инвентарь добавлен не более трёх дней назад
                 if (!(selectedInventory.DateDelivery.Date <= DateTime.Now.Date.AddDays(-3)))
                 {
@@ -72,6 +80,17 @@ namespace WinFormSportSchool.inventories
             }
             else
             {
+                MessageBox.Show("Выберите инвентарь для списания", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void Archive_button_Click(object sender, EventArgs e)
+        {
+            ArchiveForm archiveForm = new ArchiveForm();
+            Hide();
+            if(archiveForm.ShowDialog() == DialogResult.OK)
+            {
+                this.Show();
                 MessageBox.Show("Выберите инвентарь для редактирования", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

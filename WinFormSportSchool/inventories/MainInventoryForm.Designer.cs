@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.InventoryList_dataGridView = new System.Windows.Forms.DataGridView();
             this.Add_button = new System.Windows.Forms.Button();
+            this.WriteOff_button = new System.Windows.Forms.Button();
+            this.Archive_button = new System.Windows.Forms.Button();
             this.Edit_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.InventoryList_dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +93,33 @@
             this.Add_button.UseVisualStyleBackColor = false;
             this.Add_button.Click += new System.EventHandler(this.Add_button_Click);
             // 
+            // WriteOff_button
+            // 
+            this.WriteOff_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(167)))));
+            this.WriteOff_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(167)))));
+            this.WriteOff_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.WriteOff_button.Location = new System.Drawing.Point(345, 15);
+            this.WriteOff_button.Margin = new System.Windows.Forms.Padding(4);
+            this.WriteOff_button.Name = "WriteOff_button";
+            this.WriteOff_button.Size = new System.Drawing.Size(123, 30);
+            this.WriteOff_button.TabIndex = 3;
+            this.WriteOff_button.Text = "Списать";
+            this.WriteOff_button.UseVisualStyleBackColor = false;
+            this.WriteOff_button.Click += new System.EventHandler(this.WriteOff_button_Click);
+            // 
+            // Archive_button
+            // 
+            this.Archive_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
+            this.Archive_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
+            this.Archive_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Archive_button.Location = new System.Drawing.Point(1125, 15);
+            this.Archive_button.Margin = new System.Windows.Forms.Padding(4);
+            this.Archive_button.Name = "Archive_button";
+            this.Archive_button.Size = new System.Drawing.Size(123, 30);
+            this.Archive_button.TabIndex = 4;
+            this.Archive_button.Text = "Архив";
+            this.Archive_button.UseVisualStyleBackColor = false;
+            this.Archive_button.Click += new System.EventHandler(this.Archive_button_Click);
             // Edit_button
             // 
             this.Edit_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(129)))));
@@ -110,6 +139,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1260, 652);
+            this.Controls.Add(this.Archive_button);
+            this.Controls.Add(this.WriteOff_button);
             this.Controls.Add(this.Edit_button);
             this.Controls.Add(this.Add_button);
             this.Controls.Add(this.InventoryList_dataGridView);
@@ -126,6 +157,8 @@
         #endregion
         private System.Windows.Forms.DataGridView InventoryList_dataGridView;
         private System.Windows.Forms.Button Add_button;
+        private System.Windows.Forms.Button WriteOff_button;
+        private System.Windows.Forms.Button Archive_button;
         private System.Windows.Forms.Button Edit_button;
     }
 }

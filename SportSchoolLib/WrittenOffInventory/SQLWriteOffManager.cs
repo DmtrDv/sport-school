@@ -25,7 +25,7 @@ namespace SportSchoolLib.WrittenOffInventory
                 {
                     command.Parameters.AddWithValue("@NameInventory", inventory.Name_Inventory);
                     command.Parameters.AddWithValue("@CountWrittenOff", writeOffCount);
-                    command.Parameters.AddWithValue("@WriteOffDate", DateTime.Now);
+                    command.Parameters.AddWithValue("@WriteOffDate", DateTime.Now.Date);
                     command.Parameters.AddWithValue("@OriginalInventoryId", inventory.Id_Inventory);
 
                     command.ExecuteNonQuery();
@@ -33,7 +33,7 @@ namespace SportSchoolLib.WrittenOffInventory
 
                 if (writeOffCount == inventory.Count_Inventory)
                 {
-                    const string deleteQuery = "DELETE FROM inventory WHERE IdInventory";
+                    const string deleteQuery = "DELETE FROM inventory WHERE IdInventory = @IdInventory";
                     using (MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, conn))
                     {
                         deleteCommand.Parameters.AddWithValue("@IdInventory", inventory.Id_Inventory);

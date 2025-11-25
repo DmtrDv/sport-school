@@ -11,6 +11,10 @@ namespace SportSchoolLib.Inventors
     {
         private IInventoryManager storage_;
         private IWriteOffManager writeOffStorage_;
+        public InventoryManager(IInventoryManager storage)
+        {
+            storage_ = storage;
+        }
         public InventoryManager(IInventoryManager storage, IWriteOffManager writeOffStorage)
         {
             storage_ = storage;
