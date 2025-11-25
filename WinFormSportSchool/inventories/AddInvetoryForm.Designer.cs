@@ -44,11 +44,12 @@
             this.ok_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
             this.ok_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
             this.ok_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ok_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ok_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ok_button.Location = new System.Drawing.Point(165, 133);
+            this.ok_button.Location = new System.Drawing.Point(203, 138);
             this.ok_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ok_button.Name = "ok_button";
-            this.ok_button.Size = new System.Drawing.Size(100, 32);
+            this.ok_button.Size = new System.Drawing.Size(100, 30);
             this.ok_button.TabIndex = 0;
             this.ok_button.Text = "Добавить";
             this.ok_button.UseVisualStyleBackColor = false;
@@ -59,10 +60,11 @@
             this.Cancel_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(212)))));
             this.Cancel_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(212)))));
             this.Cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Cancel_button.Location = new System.Drawing.Point(336, 133);
+            this.Cancel_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Cancel_button.Location = new System.Drawing.Point(353, 138);
             this.Cancel_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Cancel_button.Name = "Cancel_button";
-            this.Cancel_button.Size = new System.Drawing.Size(100, 32);
+            this.Cancel_button.Size = new System.Drawing.Size(100, 30);
             this.Cancel_button.TabIndex = 1;
             this.Cancel_button.Text = "Отмена";
             this.Cancel_button.UseVisualStyleBackColor = false;
@@ -104,7 +106,7 @@
             this.Name_textBox.Location = new System.Drawing.Point(165, 14);
             this.Name_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name_textBox.Name = "Name_textBox";
-            this.Name_textBox.Size = new System.Drawing.Size(271, 24);
+            this.Name_textBox.Size = new System.Drawing.Size(287, 24);
             this.Name_textBox.TabIndex = 5;
             // 
             // Count_numericUpDown
@@ -118,7 +120,7 @@
             0,
             0});
             this.Count_numericUpDown.Name = "Count_numericUpDown";
-            this.Count_numericUpDown.Size = new System.Drawing.Size(272, 24);
+            this.Count_numericUpDown.Size = new System.Drawing.Size(288, 24);
             this.Count_numericUpDown.TabIndex = 6;
             // 
             // DateDelivery_dateTimePicker
@@ -127,7 +129,7 @@
             this.DateDelivery_dateTimePicker.Location = new System.Drawing.Point(165, 78);
             this.DateDelivery_dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DateDelivery_dateTimePicker.Name = "DateDelivery_dateTimePicker";
-            this.DateDelivery_dateTimePicker.Size = new System.Drawing.Size(271, 24);
+            this.DateDelivery_dateTimePicker.Size = new System.Drawing.Size(287, 24);
             this.DateDelivery_dateTimePicker.TabIndex = 7;
             // 
             // AddInvetoryForm
@@ -135,7 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(464, 217);
+            this.ClientSize = new System.Drawing.Size(464, 188);
             this.ControlBox = false;
             this.Controls.Add(this.DateDelivery_dateTimePicker);
             this.Controls.Add(this.Count_numericUpDown);
@@ -152,6 +154,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddInvetoryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Добавить инвентарь";
             ((System.ComponentModel.ISupportInitialize)(this.Count_numericUpDown)).EndInit();
             this.ResumeLayout(false);

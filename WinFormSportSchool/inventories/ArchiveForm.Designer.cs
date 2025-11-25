@@ -35,8 +35,8 @@
             // 
             // archive_dataGridView
             // 
-            this.archive_dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.archive_dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.archive_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.archive_dataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -68,7 +68,9 @@
             this.ControlBox = false;
             this.Controls.Add(this.back_button);
             this.Controls.Add(this.archive_dataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ArchiveForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Архив";
             this.Load += new System.EventHandler(this.ArchiveForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.archive_dataGridView)).EndInit();

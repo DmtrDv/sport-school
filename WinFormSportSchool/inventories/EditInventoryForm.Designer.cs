@@ -42,16 +42,16 @@
             // DateDelivery_dateTimePicker
             // 
             this.DateDelivery_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateDelivery_dateTimePicker.Location = new System.Drawing.Point(166, 79);
+            this.DateDelivery_dateTimePicker.Location = new System.Drawing.Point(140, 79);
             this.DateDelivery_dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DateDelivery_dateTimePicker.Name = "DateDelivery_dateTimePicker";
-            this.DateDelivery_dateTimePicker.Size = new System.Drawing.Size(271, 24);
+            this.DateDelivery_dateTimePicker.Size = new System.Drawing.Size(299, 24);
             this.DateDelivery_dateTimePicker.TabIndex = 15;
             // 
             // Count_numericUpDown
             // 
             this.Count_numericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Count_numericUpDown.Location = new System.Drawing.Point(166, 47);
+            this.Count_numericUpDown.Location = new System.Drawing.Point(140, 47);
             this.Count_numericUpDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Count_numericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -59,16 +59,16 @@
             0,
             0});
             this.Count_numericUpDown.Name = "Count_numericUpDown";
-            this.Count_numericUpDown.Size = new System.Drawing.Size(272, 24);
+            this.Count_numericUpDown.Size = new System.Drawing.Size(300, 24);
             this.Count_numericUpDown.TabIndex = 14;
             // 
             // Name_textBox
             // 
             this.Name_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Name_textBox.Location = new System.Drawing.Point(166, 15);
+            this.Name_textBox.Location = new System.Drawing.Point(140, 15);
             this.Name_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name_textBox.Name = "Name_textBox";
-            this.Name_textBox.Size = new System.Drawing.Size(271, 24);
+            this.Name_textBox.Size = new System.Drawing.Size(299, 24);
             this.Name_textBox.TabIndex = 13;
             // 
             // label3
@@ -106,10 +106,11 @@
             this.Cancel_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(212)))));
             this.Cancel_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(212)))));
             this.Cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Cancel_button.Location = new System.Drawing.Point(337, 134);
+            this.Cancel_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Cancel_button.Location = new System.Drawing.Point(340, 134);
             this.Cancel_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Cancel_button.Name = "Cancel_button";
-            this.Cancel_button.Size = new System.Drawing.Size(100, 32);
+            this.Cancel_button.Size = new System.Drawing.Size(100, 30);
             this.Cancel_button.TabIndex = 9;
             this.Cancel_button.Text = "Отмена";
             this.Cancel_button.UseVisualStyleBackColor = false;
@@ -120,11 +121,12 @@
             this.ok_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
             this.ok_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
             this.ok_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ok_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ok_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ok_button.Location = new System.Drawing.Point(166, 134);
+            this.ok_button.Location = new System.Drawing.Point(190, 134);
             this.ok_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ok_button.Name = "ok_button";
-            this.ok_button.Size = new System.Drawing.Size(100, 32);
+            this.ok_button.Size = new System.Drawing.Size(100, 30);
             this.ok_button.TabIndex = 8;
             this.ok_button.Text = "Применить";
             this.ok_button.UseVisualStyleBackColor = false;
@@ -136,6 +138,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(451, 184);
+            this.ControlBox = false;
             this.Controls.Add(this.DateDelivery_dateTimePicker);
             this.Controls.Add(this.Count_numericUpDown);
             this.Controls.Add(this.Name_textBox);
@@ -148,6 +151,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditInventoryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Редактирование";
             ((System.ComponentModel.ISupportInitialize)(this.Count_numericUpDown)).EndInit();
             this.ResumeLayout(false);
