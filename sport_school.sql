@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Ноя 20 2025 г., 22:02
+-- Время создания: Ноя 24 2025 г., 21:51
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.1.26
 
@@ -77,7 +77,9 @@ CREATE TABLE `inventory` (
 --
 
 INSERT INTO `inventory` (`IdInventory`, `NameInventory`, `CountInventory`, `DateDelivery`) VALUES
-(1, 'Карабин (GURU)', 12, '2025-11-19');
+(1, 'Карабин (GURU)', 1202, '2025-11-19'),
+(2, 'Карабин (Vento)', 121, '2025-11-23'),
+(3, 'Восьмёрка (GURU)', 20, '2025-11-23');
 
 -- --------------------------------------------------------
 
@@ -118,6 +120,27 @@ INSERT INTO `trainee` (`Id_Trainee`, `FIO`, `Birthday`, `Section`, `Category`, `
 (3, 'Артёмов Артём Артёмович', '2007-02-08', 'гребля', 'отсутствует', 'Артёмов Артём Петрович', '99008007060'),
 (4, 'Дмитров Дмитрий Дмитриевич', '2025-10-21', 'гребля', 'III_юношеский_спортивный_разряд', 'Дмитров Дмитрий Дмитриевич', '88888888888');
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `written_off_inventory`
+--
+
+CREATE TABLE `written_off_inventory` (
+  `IdWrittenOff` int(11) NOT NULL,
+  `NameInventory` varchar(255) COLLATE utf8_bin NOT NULL,
+  `CountWrittenOff` int(11) NOT NULL,
+  `WriteOffDate` datetime NOT NULL,
+  `OriginalInventoryId` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Дамп данных таблицы `written_off_inventory`
+--
+
+INSERT INTO `written_off_inventory` (`IdWrittenOff`, `NameInventory`, `CountWrittenOff`, `WriteOffDate`, `OriginalInventoryId`) VALUES
+(1, 'Карабин (GURU)', 10, '2025-11-24 23:37:01', 1);
+
 --
 -- Индексы сохранённых таблиц
 --
@@ -141,6 +164,12 @@ ALTER TABLE `trainee`
   ADD PRIMARY KEY (`Id_Trainee`);
 
 --
+-- Индексы таблицы `written_off_inventory`
+--
+ALTER TABLE `written_off_inventory`
+  ADD PRIMARY KEY (`IdWrittenOff`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -154,13 +183,19 @@ ALTER TABLE `instructor`
 -- AUTO_INCREMENT для таблицы `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `IdInventory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdInventory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `trainee`
 --
 ALTER TABLE `trainee`
   MODIFY `Id_Trainee` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `written_off_inventory`
+--
+ALTER TABLE `written_off_inventory`
+  MODIFY `IdWrittenOff` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

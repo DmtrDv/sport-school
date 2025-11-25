@@ -44,5 +44,19 @@ namespace SportSchoolLib.Inventors
             writeOffStorage_.WriteOffInventory(inventory, writeOffCount);
             return "Инвентарь успешно списан";
         }
+        public string UpdateInventory(Inventory inventory)
+        {
+            if (string.IsNullOrEmpty(inventory.Name_Inventory)) //проверка на пустое название
+            {
+                return "Введите наименование инвентаря";
+            }
+            if (inventory.Count_Inventory <= 0) //проверка на корректное количество инвентаря
+            {
+                return "Введите корректное количество инвентаря";
+            }
+
+            storage_.UpdateInventory(inventory); //обновляем данные в БД
+            return "Запись успешно обновлена";
+        }
     }
 }
