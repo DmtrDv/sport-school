@@ -36,16 +36,16 @@ namespace SportSchoolLib.Inventors
         }
         public string WriteOffInventory(Inventory inventory, int writeOffCount)
         {
-            if (writeOffCount <= 0)
+            if (writeOffCount <= 0)//проверка на количество
             {
                 return "Количество для списания должно быть больше 0";
             }
 
-            if (writeOffCount > inventory.Count_Inventory)
+            if (writeOffCount > inventory.Count_Inventory)//проверка на количество списываемого инвентаря
             {
                 return $"Нельзя списать больше {inventory.Count_Inventory} единиц инвентаря";
             }
-            writeOffStorage_.WriteOffInventory(inventory, writeOffCount);
+            writeOffStorage_.WriteOffInventory(inventory, writeOffCount); //запись и обновление данных
             return "Инвентарь успешно списан";
         }
         public string UpdateInventory(Inventory inventory)

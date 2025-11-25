@@ -1,5 +1,5 @@
-﻿using SportSchoolLib;
-using SportSchoolLib.Inventors;
+﻿using SportSchoolLib.Inventors;
+using SportSchoolLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace WinFormSportSchool.inventories
 {
-    public partial class WriteOffInventoryForm: Form
+    public partial class WriteOffInventoryForm : Form
     {
         private InventoryManager inventoryManager_;
         private Inventory selectedInventory_;
@@ -22,7 +22,7 @@ namespace WinFormSportSchool.inventories
             inventoryManager_ = inventoryManager;
             selectedInventory_ = selectedInventory;
 
-            Name_label.Text = selectedInventory_.Name_Inventory;
+            Name_label.Text = selectedInventory_.Name_Inventory + $" ({selectedInventory_.Count_Inventory})";
             dateWriteOff_dateTimePicker.Value = DateTime.Now;
         }
 
