@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace WinFormSportSchool.inventories
 {
-    public partial class ArchiveForm: Form
+    public partial class ArchiveForm : Form
     {
         SQLWriteOffManager SqlWriteOffManager = new SQLWriteOffManager();
         public ArchiveForm()
