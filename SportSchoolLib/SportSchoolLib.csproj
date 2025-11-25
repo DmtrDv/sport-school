@@ -117,6 +117,10 @@
     <Compile Include="Instructors\SQLInstructorManager.cs" />
     <Compile Include="Trainees\Trainee.cs" />
     <Compile Include="Trainees\TraineeDBManager.cs" />
+    <Compile Include="WrittenOffInventory\IWrittenOffManager.cs" />
+    <Compile Include="WrittenOffInventory\SQLWriteOffManager.cs" />
+    <Compile Include="WrittenOffInventory\WriteOffManager.cs" />
+    <Compile Include="WrittenOffInventory\WrittenOffInventory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
