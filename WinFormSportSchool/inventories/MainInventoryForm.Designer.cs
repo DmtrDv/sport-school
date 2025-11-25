@@ -28,49 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.InventoryList_dataGridView = new System.Windows.Forms.DataGridView();
             this.Add_button = new System.Windows.Forms.Button();
             this.WriteOff_button = new System.Windows.Forms.Button();
             this.Archive_button = new System.Windows.Forms.Button();
+            this.Edit_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.InventoryList_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // InventoryList_dataGridView
             // 
+            this.InventoryList_dataGridView.AllowUserToAddRows = false;
+            this.InventoryList_dataGridView.AllowUserToDeleteRows = false;
             this.InventoryList_dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.InventoryList_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.InventoryList_dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.InventoryList_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.InventoryList_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.InventoryList_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.InventoryList_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.InventoryList_dataGridView.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.InventoryList_dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.InventoryList_dataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.InventoryList_dataGridView.GridColor = System.Drawing.SystemColors.MenuBar;
             this.InventoryList_dataGridView.Location = new System.Drawing.Point(13, 50);
             this.InventoryList_dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.InventoryList_dataGridView.MultiSelect = false;
             this.InventoryList_dataGridView.Name = "InventoryList_dataGridView";
+            this.InventoryList_dataGridView.ReadOnly = true;
             this.InventoryList_dataGridView.RowHeadersWidth = 51;
             this.InventoryList_dataGridView.RowTemplate.Height = 24;
+            this.InventoryList_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.InventoryList_dataGridView.Size = new System.Drawing.Size(1235, 586);
             this.InventoryList_dataGridView.TabIndex = 1;
+            this.InventoryList_dataGridView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.InventoryList_dataGridView_MouseDown);
             // 
             // Add_button
             // 
@@ -113,6 +120,18 @@
             this.Archive_button.Text = "Архив";
             this.Archive_button.UseVisualStyleBackColor = false;
             this.Archive_button.Click += new System.EventHandler(this.Archive_button_Click);
+            // Edit_button
+            // 
+            this.Edit_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(129)))));
+            this.Edit_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(129)))));
+            this.Edit_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Edit_button.Location = new System.Drawing.Point(169, 15);
+            this.Edit_button.Name = "Edit_button";
+            this.Edit_button.Size = new System.Drawing.Size(123, 30);
+            this.Edit_button.TabIndex = 3;
+            this.Edit_button.Text = "Редактировать";
+            this.Edit_button.UseVisualStyleBackColor = false;
+            this.Edit_button.Click += new System.EventHandler(this.Edit_button_Click);
             // 
             // MainInventoryForm
             // 
@@ -122,6 +141,7 @@
             this.ClientSize = new System.Drawing.Size(1260, 652);
             this.Controls.Add(this.Archive_button);
             this.Controls.Add(this.WriteOff_button);
+            this.Controls.Add(this.Edit_button);
             this.Controls.Add(this.Add_button);
             this.Controls.Add(this.InventoryList_dataGridView);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -139,5 +159,6 @@
         private System.Windows.Forms.Button Add_button;
         private System.Windows.Forms.Button WriteOff_button;
         private System.Windows.Forms.Button Archive_button;
+        private System.Windows.Forms.Button Edit_button;
     }
 }

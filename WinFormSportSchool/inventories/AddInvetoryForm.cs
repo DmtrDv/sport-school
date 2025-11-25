@@ -43,7 +43,7 @@ namespace WinFormSportSchool.inventories
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Cancel_button_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();

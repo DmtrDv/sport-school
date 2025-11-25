@@ -27,6 +27,7 @@ namespace WinFormSportSchool.inventories
             try
             {
                 InventoryList_dataGridView.DataSource = SqlInventoryManager.GetInventories();
+                InventoryList_dataGridView.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -46,6 +47,7 @@ namespace WinFormSportSchool.inventories
         }
 
         private void WriteOff_button_Click(object sender, EventArgs e)
+        private void Edit_button_Click(object sender, EventArgs e)
         {
             if (InventoryList_dataGridView.SelectedRows.Count > 0) //выбрана ли строка для редактирования
             {
@@ -56,6 +58,24 @@ namespace WinFormSportSchool.inventories
                 if (writeOffInventoryForm.ShowDialog() == DialogResult.OK) // если результат диалога ОК, то
                 {
                     InventoryList_dataGridView.DataSource = SqlInventoryManager.GetInventories();
+                // Если инвентарь добавлен не более трёх дней назад
+                if (!(selectedInventory.DateDelivery.Date <= DateTime.Now.Date.AddDays(-3)))
+                {
+                    Inventory editingInventory = selectedInventory.Clone();
+                    InventoryManager inventoryManager = new InventoryManager(SqlInventoryManager);
+                    EditInventoryForm editInventoryForm = new EditInventoryForm(inventoryManager, editingInventory);
+                    if (editInventoryForm.ShowDialog() == DialogResult.OK) // если результат диалога ОК, то меняем значения
+                    {
+                        selectedInventory.Name_Inventory = editingInventory.Name_Inventory;
+                        selectedInventory.Count_Inventory = editingInventory.Count_Inventory;
+                        selectedInventory.DateDelivery = editingInventory.DateDelivery;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Нельзя редактировать инвентарь, добавленный более трёх дней назад", "Редактирование запрещено",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
             }
             else
@@ -71,6 +91,19 @@ namespace WinFormSportSchool.inventories
             if(archiveForm.ShowDialog() == DialogResult.OK)
             {
                 this.Show();
+                MessageBox.Show("Выберите инвентарь для редактирования", "Внимание",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void InventoryList_dataGridView_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            // Клик в пустой области (не на строке, не на заголовке, не на ячейке)
+            //                         координыты клика   в какую область попал клик
+            if (InventoryList_dataGridView.HitTest(e.X, e.Y).Type == DataGridViewHitTestType.None)
+            {
+                InventoryList_dataGridView.ClearSelection();
             }
         }
     }
