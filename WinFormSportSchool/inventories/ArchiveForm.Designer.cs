@@ -68,7 +68,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.back_button);
             this.Controls.Add(this.archive_dataGridView);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ArchiveForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Архив";

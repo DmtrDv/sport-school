@@ -1,4 +1,8 @@
-﻿namespace WinFormSportSchool
+﻿using Castle.Components.DictionaryAdapter.Xml;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WinFormSportSchool
 {
     partial class MainTraineeForm
     {
@@ -55,12 +59,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableListTrainees_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableListTrainees_dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.tableListTrainees_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableListTrainees_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableListTrainees_dataGridView.Location = new System.Drawing.Point(13, 52);
             this.tableListTrainees_dataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.tableListTrainees_dataGridView.Name = "tableListTrainees_dataGridView";
             this.tableListTrainees_dataGridView.RowHeadersWidth = 51;
-            this.tableListTrainees_dataGridView.Size = new System.Drawing.Size(1145, 549);
+            this.tableListTrainees_dataGridView.Size = new System.Drawing.Size(1237, 549);
             this.tableListTrainees_dataGridView.TabIndex = 3;
             // 
             // MainTraineeForm
@@ -68,18 +74,24 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1179, 614);
+            this.ClientSize = new System.Drawing.Size(1271, 614);
+            this.ControlBox = false ;
             this.Controls.Add(this.AddTrainee_button);
             this.Controls.Add(this.tableListTrainees_dataGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainTraineeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Спортивная школа";
+            this.Text = "Ученики";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableListTrainees_dataGridView)).EndInit();
             this.ResumeLayout(false);
 
+            PictureBox iconBox = new PictureBox();
+            iconBox.Size = new Size(32, 32);
+            iconBox.Location = new Point(8, 4);
+            iconBox.SizeMode = PictureBoxSizeMode.Zoom;
+            iconBox.Image = Properties.Resources.icon;
         }
 
         #endregion

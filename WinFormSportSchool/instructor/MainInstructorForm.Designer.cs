@@ -42,6 +42,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.InstructorsList_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.InstructorsList_dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.InstructorsList_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.InstructorsList_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.InstructorsList_dataGridView.Location = new System.Drawing.Point(11, 51);
             this.InstructorsList_dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

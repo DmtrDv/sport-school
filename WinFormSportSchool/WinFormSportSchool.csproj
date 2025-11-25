@@ -226,9 +226,23 @@
       <Name>SportSchoolLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icon-student.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button_Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-trener.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-inventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-archive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
