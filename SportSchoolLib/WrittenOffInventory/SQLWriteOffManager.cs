@@ -25,7 +25,7 @@ namespace SportSchoolLib.WrittenOffInventory
                 {
                     command.Parameters.AddWithValue("@NameInventory", inventory.Name_Inventory);
                     command.Parameters.AddWithValue("@CountWrittenOff", writeOffCount);
-                    command.Parameters.AddWithValue("@WriteOffDate", DateTime.Now);
+                    command.Parameters.AddWithValue("@WriteOffDate", DateTime.Now.Date);
                     command.Parameters.AddWithValue("@OriginalInventoryId", inventory.Id_Inventory);
 
                     command.ExecuteNonQuery();
