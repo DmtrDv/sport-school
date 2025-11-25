@@ -33,7 +33,7 @@ namespace SportSchoolLib.Inventors
             {
                 return "Введите наименование инвентаря";
             }
-            if (inventory.Count_Inventory == 0 || inventory.Count_Inventory < 0) //проверка на корректное количество инвентаря
+            if (inventory.Count_Inventory <= 0) //проверка на корректное количество инвентаря
             {
                 return "Введите корректное количество инвентаря";
             }
