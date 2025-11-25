@@ -69,15 +69,44 @@ namespace SportSchoolLib.Inventors
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (MySqlException ex)
                 {
-                    return "Ошибка при добавлении: " + ex;
+                    return "Ошибка при добавлении: " + ex.Message;
                 }
             }
         }
         public string UpdateInventory(Inventory inventory)
         {
-            return "";
+            using (MySqlConnection conn = new MySqlConnection(AppSettings.ConnectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    const string query = @"UPDATE inventory 
+                                          SET NameInventory = @NameInventory, CountInventory = @CountInventory, DateDelivery = @DateDelivery
+                                          WHERE IdInventory = @IdInventory";
+                    using (MySqlCommand command = new MySqlCommand(query, conn))
+                    {
+                        command.Parameters.AddWithValue("@NameInventory", inventory.Name_Inventory);
+                        command.Parameters.AddWithValue("@CountInventory", inventory.Count_Inventory);
+                        command.Parameters.AddWithValue("@DateDelivery", inventory.DateDelivery);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            return "Запись успешно обновлена";
+                        }
+                        else
+                        {
+                            return "Ошибка: запись не обновлена";
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    return "Ошибка при обновлении: " + ex.Message;
+                }
+            }
         }
     }
 }
