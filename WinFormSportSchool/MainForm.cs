@@ -13,6 +13,7 @@ namespace WinFormSportSchool
 {
     public partial class MainForm: Form
     {
+        private Form currentForm = null;
         public MainForm()
         {
             InitializeComponent();
@@ -25,42 +26,47 @@ namespace WinFormSportSchool
 
         private void trainee_button_Click(object sender, EventArgs e)
         {
-            MainTraineeForm mainTraineeForm = new MainTraineeForm();
-            //Hide();
-            if (mainTraineeForm.ShowDialog() == DialogResult.OK)
-            {
-               // this.Show();
-            }
+            ShowFormInWorkArea(new MainTraineeForm());
         }
 
         private void instructor_button_Click(object sender, EventArgs e)
         {
-            MainInstructorForm mainInstructorForm = new MainInstructorForm();
-           // Hide();
-            if (mainInstructorForm.ShowDialog() == DialogResult.OK)
-            {
-              //  this.Show();
-            }
+            ShowFormInWorkArea(new MainInstructorForm());
         }
 
         private void inventory_button_Click(object sender, EventArgs e)
         {
-            MainInventoryForm mainInventoryForm = new MainInventoryForm();
-            //Hide();
-            if (mainInventoryForm.ShowDialog() == DialogResult.OK)
-            {
-               // this.Show();
-            }
+            ShowFormInWorkArea(new MainInventoryForm());
         }
 
         private void archive_button_Click(object sender, EventArgs e)
         {
-            ArchiveForm archiveForm = new ArchiveForm();
-            Hide();
-            if (archiveForm.ShowDialog() == DialogResult.OK)
+            ShowFormInWorkArea(new ArchiveForm());
+        }
+
+        private void ShowFormInWorkArea(Form form)
+        {
+            // Закрываем текущую форму
+            if (currentForm != null)
             {
-                this.Show();
+                currentForm.Close();
+                currentForm.Dispose();
             }
+
+            // Настраиваем новую форму
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            form.Visible = true;
+
+            // Добавляем в рабочую область
+            this.workArea_panel.Controls.Clear();
+            this.workArea_panel.Controls.Add(form);
+
+            currentForm = form;
+
+            // Обновляем заголовок главного окна
+            this.Text = "Спортивная школа - " + form.Text;
         }
     }
 }
