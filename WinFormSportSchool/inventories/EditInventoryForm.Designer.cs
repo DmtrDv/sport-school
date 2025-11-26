@@ -54,7 +54,7 @@
             this.Count_numericUpDown.Location = new System.Drawing.Point(140, 47);
             this.Count_numericUpDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Count_numericUpDown.Maximum = new decimal(new int[] {
-            10000,
+            100000,
             0,
             0,
             0});

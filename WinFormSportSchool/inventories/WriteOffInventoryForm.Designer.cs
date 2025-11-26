@@ -82,6 +82,11 @@
             // 
             this.count_numericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.count_numericUpDown.Location = new System.Drawing.Point(280, 63);
+            this.count_numericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.count_numericUpDown.Name = "count_numericUpDown";
             this.count_numericUpDown.Size = new System.Drawing.Size(184, 24);
             this.count_numericUpDown.TabIndex = 4;

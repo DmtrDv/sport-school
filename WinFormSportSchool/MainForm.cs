@@ -48,6 +48,7 @@ namespace WinFormSportSchool
             this.workArea_panel.Controls.Clear();
             FindOf_label.Enabled = false;
             FindOf_textBox.Enabled = false;
+            this.Text = "Спортивная школа";
         }
         private void ShowFormInWorkArea(Form form)
         {
