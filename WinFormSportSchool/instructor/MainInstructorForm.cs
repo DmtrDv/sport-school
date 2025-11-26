@@ -24,6 +24,7 @@ namespace WinFormSportSchool
             try
             {
                 InstructorsList_dataGridView.DataSource = instrManager.GetInstructors();
+                InstructorsList_dataGridView.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -32,7 +33,7 @@ namespace WinFormSportSchool
             }
         }
 
-        private void AddInstructor_toolStripButton_Click(object sender, EventArgs e)
+        private void Add_button_Click(object sender, EventArgs e)
         {
             InstructorManager instructorManager = new InstructorManager(instrManager);
             AddInstructorForm addInstructorForm = new AddInstructorForm(instructorManager);
@@ -40,12 +41,6 @@ namespace WinFormSportSchool
             {
                 InstructorsList_dataGridView.DataSource = instrManager.GetInstructors();
             }
-            /*InstructorManager instructor = new InstructorManager(instructorManager);
-            AddInstructorForm addInstructorForm = new AddInstructorForm(instructor);
-            if (addInstructorForm.ShowDialog() == DialogResult.OK)
-            {
-                InstructorsList_dataGridView.DataSource = instructorManager.GetInstructors();
-            }*/
         }
     }
 }

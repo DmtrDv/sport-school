@@ -71,7 +71,7 @@
             // 
             // Name_label
             // 
-            this.Name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name_label.Location = new System.Drawing.Point(13, 63);
             this.Name_label.Name = "Name_label";
             this.Name_label.Size = new System.Drawing.Size(261, 40);
@@ -80,40 +80,48 @@
             // 
             // count_numericUpDown
             // 
-            this.count_numericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.count_numericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.count_numericUpDown.Location = new System.Drawing.Point(280, 63);
             this.count_numericUpDown.Name = "count_numericUpDown";
-            this.count_numericUpDown.Size = new System.Drawing.Size(184, 27);
+            this.count_numericUpDown.Size = new System.Drawing.Size(184, 24);
             this.count_numericUpDown.TabIndex = 4;
             // 
             // dateWriteOff_dateTimePicker
             // 
             this.dateWriteOff_dateTimePicker.AllowDrop = true;
             this.dateWriteOff_dateTimePicker.Enabled = false;
-            this.dateWriteOff_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateWriteOff_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateWriteOff_dateTimePicker.Location = new System.Drawing.Point(544, 63);
             this.dateWriteOff_dateTimePicker.Name = "dateWriteOff_dateTimePicker";
-            this.dateWriteOff_dateTimePicker.Size = new System.Drawing.Size(200, 27);
+            this.dateWriteOff_dateTimePicker.Size = new System.Drawing.Size(200, 24);
             this.dateWriteOff_dateTimePicker.TabIndex = 5;
             // 
             // writtenOff_button
             // 
-            this.writtenOff_button.Location = new System.Drawing.Point(528, 131);
+            this.writtenOff_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
+            this.writtenOff_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
+            this.writtenOff_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.writtenOff_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.writtenOff_button.Location = new System.Drawing.Point(502, 131);
             this.writtenOff_button.Name = "writtenOff_button";
             this.writtenOff_button.Size = new System.Drawing.Size(100, 30);
             this.writtenOff_button.TabIndex = 6;
             this.writtenOff_button.Text = "Списать";
-            this.writtenOff_button.UseVisualStyleBackColor = true;
+            this.writtenOff_button.UseVisualStyleBackColor = false;
             this.writtenOff_button.Click += new System.EventHandler(this.writtenOff_button_Click);
             // 
             // Cancel_button
             // 
-            this.Cancel_button.Location = new System.Drawing.Point(670, 131);
+            this.Cancel_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(212)))));
+            this.Cancel_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(212)))));
+            this.Cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Cancel_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Cancel_button.Location = new System.Drawing.Point(652, 131);
             this.Cancel_button.Name = "Cancel_button";
             this.Cancel_button.Size = new System.Drawing.Size(100, 30);
             this.Cancel_button.TabIndex = 7;
             this.Cancel_button.Text = "Отмена";
-            this.Cancel_button.UseVisualStyleBackColor = true;
+            this.Cancel_button.UseVisualStyleBackColor = false;
             this.Cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
             // 
             // WriteOffInventoryForm
@@ -121,7 +129,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 186);
+            this.ClientSize = new System.Drawing.Size(774, 209);
+            this.ControlBox = false;
             this.Controls.Add(this.Cancel_button);
             this.Controls.Add(this.writtenOff_button);
             this.Controls.Add(this.dateWriteOff_dateTimePicker);
@@ -134,7 +143,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WriteOffInventoryForm";
-            this.Text = "WriteOffInventoryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Списание";
             ((System.ComponentModel.ISupportInitialize)(this.count_numericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

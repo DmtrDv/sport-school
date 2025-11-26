@@ -23,6 +23,7 @@ namespace WinFormSportSchool
             try
             {
                 tableListTrainees_dataGridView.DataSource = traineeManager.GetListTrainee();
+                tableListTrainees_dataGridView.ClearSelection();
             }
             catch(Exception ex)
             {

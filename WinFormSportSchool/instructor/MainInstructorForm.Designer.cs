@@ -29,36 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.AddInstructor_toolStripButton = new System.Windows.Forms.ToolStripButton();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainInstructorForm));
             this.InstructorsList_dataGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStrip1.SuspendLayout();
+            this.Add_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.InstructorsList_dataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddInstructor_toolStripButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(629, 47);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // AddInstructor_toolStripButton
-            // 
-            this.AddInstructor_toolStripButton.AutoSize = false;
-            this.AddInstructor_toolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddInstructor_toolStripButton.Image = global::WinFormSportSchool.Properties.Resources.button_Add;
-            this.AddInstructor_toolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.AddInstructor_toolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddInstructor_toolStripButton.Name = "AddInstructor_toolStripButton";
-            this.AddInstructor_toolStripButton.Size = new System.Drawing.Size(44, 44);
-            this.AddInstructor_toolStripButton.Text = "Добавить тренера";
-            this.AddInstructor_toolStripButton.Click += new System.EventHandler(this.AddInstructor_toolStripButton_Click);
             // 
             // InstructorsList_dataGridView
             // 
@@ -66,13 +43,25 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.InstructorsList_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.InstructorsList_dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.InstructorsList_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.InstructorsList_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.InstructorsList_dataGridView.Location = new System.Drawing.Point(8, 49);
-            this.InstructorsList_dataGridView.Margin = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.InstructorsList_dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            this.InstructorsList_dataGridView.GridColor = System.Drawing.SystemColors.MenuBar;
+            this.InstructorsList_dataGridView.Location = new System.Drawing.Point(11, 51);
+            this.InstructorsList_dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InstructorsList_dataGridView.Name = "InstructorsList_dataGridView";
             this.InstructorsList_dataGridView.RowHeadersWidth = 51;
             this.InstructorsList_dataGridView.RowTemplate.Height = 24;
-            this.InstructorsList_dataGridView.Size = new System.Drawing.Size(610, 175);
+            this.InstructorsList_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.InstructorsList_dataGridView.Size = new System.Drawing.Size(1101, 533);
             this.InstructorsList_dataGridView.TabIndex = 1;
             // 
             // contextMenuStrip1
@@ -81,30 +70,43 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // Add_button
+            // 
+            this.Add_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
+            this.Add_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
+            this.Add_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Add_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Add_button.Location = new System.Drawing.Point(14, 14);
+            this.Add_button.Margin = new System.Windows.Forms.Padding(5);
+            this.Add_button.Name = "Add_button";
+            this.Add_button.Size = new System.Drawing.Size(123, 30);
+            this.Add_button.TabIndex = 3;
+            this.Add_button.Text = "Добавить";
+            this.Add_button.UseVisualStyleBackColor = false;
+            this.Add_button.Click += new System.EventHandler(this.Add_button_Click);
+            // 
             // MainInstructorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 236);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1127, 599);
+            this.Controls.Add(this.Add_button);
             this.Controls.Add(this.InstructorsList_dataGridView);
-            this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainInstructorForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Педагогический состав";
             this.Load += new System.EventHandler(this.MainInstructorForm_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InstructorsList_dataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton AddInstructor_toolStripButton;
         private System.Windows.Forms.DataGridView InstructorsList_dataGridView;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button Add_button;
     }
 }
