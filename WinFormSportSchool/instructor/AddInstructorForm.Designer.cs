@@ -157,7 +157,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(553, 248);
+            this.ClientSize = new System.Drawing.Size(567, 287);
             this.ControlBox = false;
             this.Controls.Add(this.Cancel_button);
             this.Controls.Add(this.Add_Instructor_button);

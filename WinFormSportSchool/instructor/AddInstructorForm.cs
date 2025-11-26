@@ -23,7 +23,7 @@ namespace WinFormSportSchool
             Qualification_comboBox.SelectedIndex = 0;
             Section_comboBox.DataSource = Enum.GetValues(typeof(section));
             Section_comboBox.SelectedIndex = 0;
-            //PhoneNumber_textBox.Mask = "7(111)-000-0000";
+            PhoneNumber_textBox.Mask = "+7(000)-000-00-00";
         }
 
         private void Add_Instructor_button_Click(object sender, EventArgs e)

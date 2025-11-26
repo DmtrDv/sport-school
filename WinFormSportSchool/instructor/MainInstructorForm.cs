@@ -24,6 +24,7 @@ namespace WinFormSportSchool
             try
             {
                 InstructorsList_dataGridView.DataSource = instrManager.GetInstructors();
+                InstructorsList_dataGridView.ClearSelection();
             }
             catch (Exception ex)
             {

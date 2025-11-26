@@ -25,7 +25,7 @@ namespace WinFormSportSchool
             Section_comboBox.SelectedIndex = -1;
             Category_comboBox.DataSource = Enum.GetValues(typeof(category));
             Category_comboBox.SelectedIndex = -1;
-        
+            PhoneNumberParent_textBox.Mask = "+7(000)-000-00-00";
         }
 
         private void Add_button_Click(object sender, EventArgs e)

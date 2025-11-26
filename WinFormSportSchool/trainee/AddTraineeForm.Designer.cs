@@ -39,7 +39,7 @@
             this.Category_comboBox = new System.Windows.Forms.ComboBox();
             this.FIO_textBox = new System.Windows.Forms.TextBox();
             this.FIOParent_textBox = new System.Windows.Forms.TextBox();
-            this.PhoneNumberParent_textBox = new System.Windows.Forms.TextBox();
+            this.PhoneNumberParent_textBox = new System.Windows.Forms.MaskedTextBox();
             this.Add_button = new System.Windows.Forms.Button();
             this.Cancel_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -107,7 +107,7 @@
             // DateBirthday_dateTimePicker
             // 
             this.DateBirthday_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateBirthday_dateTimePicker.Location = new System.Drawing.Point(164, 38);
+            this.DateBirthday_dateTimePicker.Location = new System.Drawing.Point(173, 38);
             this.DateBirthday_dateTimePicker.Name = "DateBirthday_dateTimePicker";
             this.DateBirthday_dateTimePicker.Size = new System.Drawing.Size(366, 24);
             this.DateBirthday_dateTimePicker.TabIndex = 7;
@@ -116,7 +116,7 @@
             // 
             this.Section_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Section_comboBox.FormattingEnabled = true;
-            this.Section_comboBox.Location = new System.Drawing.Point(164, 66);
+            this.Section_comboBox.Location = new System.Drawing.Point(173, 66);
             this.Section_comboBox.Name = "Section_comboBox";
             this.Section_comboBox.Size = new System.Drawing.Size(366, 26);
             this.Section_comboBox.TabIndex = 9;
@@ -125,7 +125,7 @@
             // 
             this.Category_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Category_comboBox.FormattingEnabled = true;
-            this.Category_comboBox.Location = new System.Drawing.Point(164, 96);
+            this.Category_comboBox.Location = new System.Drawing.Point(173, 96);
             this.Category_comboBox.Name = "Category_comboBox";
             this.Category_comboBox.Size = new System.Drawing.Size(366, 26);
             this.Category_comboBox.TabIndex = 10;
@@ -133,7 +133,7 @@
             // FIO_textBox
             // 
             this.FIO_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FIO_textBox.Location = new System.Drawing.Point(164, 10);
+            this.FIO_textBox.Location = new System.Drawing.Point(173, 10);
             this.FIO_textBox.Name = "FIO_textBox";
             this.FIO_textBox.Size = new System.Drawing.Size(366, 24);
             this.FIO_textBox.TabIndex = 11;
@@ -141,7 +141,7 @@
             // FIOParent_textBox
             // 
             this.FIOParent_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FIOParent_textBox.Location = new System.Drawing.Point(164, 126);
+            this.FIOParent_textBox.Location = new System.Drawing.Point(173, 126);
             this.FIOParent_textBox.Name = "FIOParent_textBox";
             this.FIOParent_textBox.Size = new System.Drawing.Size(366, 24);
             this.FIOParent_textBox.TabIndex = 12;
@@ -149,7 +149,7 @@
             // PhoneNumberParent_textBox
             // 
             this.PhoneNumberParent_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PhoneNumberParent_textBox.Location = new System.Drawing.Point(164, 154);
+            this.PhoneNumberParent_textBox.Location = new System.Drawing.Point(173, 154);
             this.PhoneNumberParent_textBox.Name = "PhoneNumberParent_textBox";
             this.PhoneNumberParent_textBox.Size = new System.Drawing.Size(366, 24);
             this.PhoneNumberParent_textBox.TabIndex = 13;
@@ -161,7 +161,7 @@
             this.Add_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
             this.Add_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Add_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Add_button.Location = new System.Drawing.Point(280, 207);
+            this.Add_button.Location = new System.Drawing.Point(289, 207);
             this.Add_button.Name = "Add_button";
             this.Add_button.Size = new System.Drawing.Size(100, 30);
             this.Add_button.TabIndex = 14;
@@ -175,7 +175,7 @@
             this.Cancel_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(212)))));
             this.Cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Cancel_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Cancel_button.Location = new System.Drawing.Point(430, 207);
+            this.Cancel_button.Location = new System.Drawing.Point(439, 207);
             this.Cancel_button.Name = "Cancel_button";
             this.Cancel_button.Size = new System.Drawing.Size(100, 30);
             this.Cancel_button.TabIndex = 15;
@@ -188,7 +188,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(542, 249);
+            this.ClientSize = new System.Drawing.Size(551, 249);
             this.ControlBox = false;
             this.Controls.Add(this.Cancel_button);
             this.Controls.Add(this.Add_button);
@@ -226,7 +226,7 @@
         private System.Windows.Forms.ComboBox Category_comboBox;
         private System.Windows.Forms.TextBox FIO_textBox;
         private System.Windows.Forms.TextBox FIOParent_textBox;
-        private System.Windows.Forms.TextBox PhoneNumberParent_textBox;
+        private System.Windows.Forms.MaskedTextBox PhoneNumberParent_textBox;
         private System.Windows.Forms.Button Add_button;
         private System.Windows.Forms.Button Cancel_button;
     }

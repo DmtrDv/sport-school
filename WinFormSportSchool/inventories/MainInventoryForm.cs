@@ -111,11 +111,7 @@ namespace WinFormSportSchool.inventories
         {
             ArchiveForm archiveForm = new ArchiveForm(); //открываем форму архив
             archiveForm.back_button.Visible = true;
-            Hide();
-            if (archiveForm.ShowDialog() == DialogResult.OK)
-            {
-                this.Show();
-            }
+            archiveForm.ShowDialog();
         }
     }
 }

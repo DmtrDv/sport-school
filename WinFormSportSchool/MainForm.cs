@@ -43,10 +43,15 @@ namespace WinFormSportSchool
         {
             ShowFormInWorkArea(new ArchiveForm());
         }
-
+        private void ClearWindows_button_Click(object sender, EventArgs e)
+        {
+            this.workArea_panel.Controls.Clear();
+            FindOf_label.Enabled = false;
+            FindOf_textBox.Enabled = false;
+        }
         private void ShowFormInWorkArea(Form form)
         {
-            // Закрываем текущую форму
+            // Закрыть текущую форму
             if (currentForm != null)
             {
                 currentForm.Close();
@@ -67,6 +72,10 @@ namespace WinFormSportSchool
 
             // Обновляем заголовок главного окна
             this.Text = "Спортивная школа - " + form.Text;
+            
+            FindOf_label.Enabled = true;
+            FindOf_textBox.Enabled = true;
+
         }
     }
 }

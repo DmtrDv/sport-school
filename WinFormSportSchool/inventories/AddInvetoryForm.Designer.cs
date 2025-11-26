@@ -137,7 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(464, 188);
+            this.ClientSize = new System.Drawing.Size(486, 221);
             this.ControlBox = false;
             this.Controls.Add(this.DateDelivery_dateTimePicker);
             this.Controls.Add(this.Count_numericUpDown);

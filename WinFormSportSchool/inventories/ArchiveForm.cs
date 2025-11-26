@@ -24,6 +24,7 @@ namespace WinFormSportSchool.inventories
             try
             {
                 archive_dataGridView.DataSource = SqlWriteOffManager.GetWrittenOffArchive();
+                archive_dataGridView.ClearSelection();
             }
             catch (Exception ex)
             {

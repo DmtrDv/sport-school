@@ -147,7 +147,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Cancel_button);
             this.Controls.Add(this.ok_button);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditInventoryForm";
