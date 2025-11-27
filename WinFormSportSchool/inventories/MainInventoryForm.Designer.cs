@@ -51,7 +51,7 @@
             this.InventoryList_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -87,7 +87,7 @@
             this.Add_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Add_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Add_button.Location = new System.Drawing.Point(13, 15);
-            this.Add_button.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Add_button.Margin = new System.Windows.Forms.Padding(5);
             this.Add_button.Name = "Add_button";
             this.Add_button.Size = new System.Drawing.Size(123, 30);
             this.Add_button.TabIndex = 2;
@@ -117,7 +117,7 @@
             this.WriteOff_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.WriteOff_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WriteOff_button.Location = new System.Drawing.Point(325, 15);
-            this.WriteOff_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.WriteOff_button.Margin = new System.Windows.Forms.Padding(4);
             this.WriteOff_button.Name = "WriteOff_button";
             this.WriteOff_button.Size = new System.Drawing.Size(123, 30);
             this.WriteOff_button.TabIndex = 3;
@@ -133,7 +133,7 @@
             this.Archive_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Archive_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Archive_button.Location = new System.Drawing.Point(1125, 15);
-            this.Archive_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Archive_button.Margin = new System.Windows.Forms.Padding(4);
             this.Archive_button.Name = "Archive_button";
             this.Archive_button.Size = new System.Drawing.Size(123, 30);
             this.Archive_button.TabIndex = 4;

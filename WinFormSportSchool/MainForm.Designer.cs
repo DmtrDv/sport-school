@@ -39,6 +39,7 @@
             this.instructor_button = new System.Windows.Forms.Button();
             this.trainee_button = new System.Windows.Forms.Button();
             this.workArea_panel = new System.Windows.Forms.Panel();
+            this.ClearSearch_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainConteiner_splitContainer)).BeginInit();
             this.MainConteiner_splitContainer.Panel1.SuspendLayout();
             this.MainConteiner_splitContainer.Panel2.SuspendLayout();
@@ -66,6 +67,7 @@
             // navigation_panel
             // 
             this.navigation_panel.BackColor = System.Drawing.Color.LightGray;
+            this.navigation_panel.Controls.Add(this.ClearSearch_button);
             this.navigation_panel.Controls.Add(this.ClearWindows_button);
             this.navigation_panel.Controls.Add(this.FindOf_textBox);
             this.navigation_panel.Controls.Add(this.FindOf_label);
@@ -101,8 +103,9 @@
             this.FindOf_textBox.Enabled = false;
             this.FindOf_textBox.Location = new System.Drawing.Point(4, 28);
             this.FindOf_textBox.Name = "FindOf_textBox";
-            this.FindOf_textBox.Size = new System.Drawing.Size(169, 27);
+            this.FindOf_textBox.Size = new System.Drawing.Size(148, 27);
             this.FindOf_textBox.TabIndex = 5;
+            this.FindOf_textBox.TextChanged += new System.EventHandler(this.FindOf_textBox_TextChanged);
             // 
             // FindOf_label
             // 
@@ -178,6 +181,18 @@
             this.workArea_panel.Size = new System.Drawing.Size(1142, 666);
             this.workArea_panel.TabIndex = 0;
             // 
+            // ClearSearch_button
+            // 
+            this.ClearSearch_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClearSearch_button.BackgroundImage = global::WinFormSportSchool.Properties.Resources.trashcan;
+            this.ClearSearch_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClearSearch_button.Location = new System.Drawing.Point(150, 27);
+            this.ClearSearch_button.Name = "ClearSearch_button";
+            this.ClearSearch_button.Size = new System.Drawing.Size(25, 25);
+            this.ClearSearch_button.TabIndex = 7;
+            this.ClearSearch_button.UseVisualStyleBackColor = true;
+            this.ClearSearch_button.Click += new System.EventHandler(this.ClearSearch_button_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -213,5 +228,6 @@
         private System.Windows.Forms.TextBox FindOf_textBox;
         private System.Windows.Forms.Label FindOf_label;
         private System.Windows.Forms.Button ClearWindows_button;
+        private System.Windows.Forms.Button ClearSearch_button;
     }
 }

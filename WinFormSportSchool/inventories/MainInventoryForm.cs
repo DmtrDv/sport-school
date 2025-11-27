@@ -28,10 +28,26 @@ namespace WinFormSportSchool.inventories
             {
                 InventoryList_dataGridView.DataSource = SqlInventoryManager.GetInventories();
                 InventoryList_dataGridView.ClearSelection();
+                InventoryList_dataGridView.CurrentCell = null;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка при загрузке данных: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void SearchData(string searchText)
+        {
+            InventoryList_dataGridView.CurrentCell = null;
+            int[] searchColumn = { 1, 2};
+            foreach (DataGridViewRow row in InventoryList_dataGridView.Rows)
+            {
+                bool found = false;
+                foreach (int searchCell in searchColumn)
+                {
+                    if (row.Cells[searchCell].Value != null && row.Cells[searchCell].Value.ToString().ToLower().Contains(searchText.ToLower())) {found = true;}
+                }
+                row.Visible = found;
             }
         }
 
@@ -87,6 +103,7 @@ namespace WinFormSportSchool.inventories
             if (InventoryList_dataGridView.HitTest(e.X, e.Y).Type == DataGridViewHitTestType.None)
             {
                 InventoryList_dataGridView.ClearSelection();
+                InventoryList_dataGridView.CurrentCell = null;
             }
         }
         private void WriteOff_button_Click(object sender, EventArgs e)
