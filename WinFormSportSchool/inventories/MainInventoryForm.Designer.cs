@@ -89,9 +89,9 @@
             this.Add_button.Location = new System.Drawing.Point(13, 15);
             this.Add_button.Margin = new System.Windows.Forms.Padding(5);
             this.Add_button.Name = "Add_button";
-            this.Add_button.Size = new System.Drawing.Size(123, 30);
+            this.Add_button.Size = new System.Drawing.Size(149, 30);
             this.Add_button.TabIndex = 2;
-            this.Add_button.Text = "Добавить";
+            this.Add_button.Text = "➕ Добавить";
             this.Add_button.UseVisualStyleBackColor = false;
             this.Add_button.Click += new System.EventHandler(this.Add_button_Click);
             // 
@@ -101,12 +101,12 @@
             this.Edit_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(129)))));
             this.Edit_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Edit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Edit_button.Location = new System.Drawing.Point(169, 15);
+            this.Edit_button.Location = new System.Drawing.Point(193, 15);
             this.Edit_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Edit_button.Name = "Edit_button";
-            this.Edit_button.Size = new System.Drawing.Size(123, 30);
+            this.Edit_button.Size = new System.Drawing.Size(149, 30);
             this.Edit_button.TabIndex = 3;
-            this.Edit_button.Text = "Редактировать";
+            this.Edit_button.Text = "✏️ Редактировать";
             this.Edit_button.UseVisualStyleBackColor = false;
             this.Edit_button.Click += new System.EventHandler(this.Edit_button_Click);
             // 
@@ -116,12 +116,12 @@
             this.WriteOff_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(167)))));
             this.WriteOff_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.WriteOff_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.WriteOff_button.Location = new System.Drawing.Point(325, 15);
+            this.WriteOff_button.Location = new System.Drawing.Point(373, 15);
             this.WriteOff_button.Margin = new System.Windows.Forms.Padding(4);
             this.WriteOff_button.Name = "WriteOff_button";
-            this.WriteOff_button.Size = new System.Drawing.Size(123, 30);
+            this.WriteOff_button.Size = new System.Drawing.Size(149, 30);
             this.WriteOff_button.TabIndex = 3;
-            this.WriteOff_button.Text = "Списать";
+            this.WriteOff_button.Text = "📄⬇️ Списать";
             this.WriteOff_button.UseVisualStyleBackColor = false;
             this.WriteOff_button.Click += new System.EventHandler(this.WriteOff_button_Click);
             // 
@@ -137,7 +137,7 @@
             this.Archive_button.Name = "Archive_button";
             this.Archive_button.Size = new System.Drawing.Size(123, 30);
             this.Archive_button.TabIndex = 4;
-            this.Archive_button.Text = "Архив";
+            this.Archive_button.Text = "📁 Архив";
             this.Archive_button.UseVisualStyleBackColor = false;
             this.Archive_button.Click += new System.EventHandler(this.Archive_button_Click);
             // 

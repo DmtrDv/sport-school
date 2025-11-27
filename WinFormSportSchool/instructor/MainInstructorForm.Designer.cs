@@ -91,7 +91,7 @@
             this.Add_button.Name = "Add_button";
             this.Add_button.Size = new System.Drawing.Size(123, 30);
             this.Add_button.TabIndex = 3;
-            this.Add_button.Text = "Добавить";
+            this.Add_button.Text = "➕ Добавить";
             this.Add_button.UseVisualStyleBackColor = false;
             this.Add_button.Click += new System.EventHandler(this.Add_button_Click);
             // 

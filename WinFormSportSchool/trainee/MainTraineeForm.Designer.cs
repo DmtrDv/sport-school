@@ -53,7 +53,7 @@ namespace WinFormSportSchool
             this.AddTrainee_button.Name = "AddTrainee_button";
             this.AddTrainee_button.Size = new System.Drawing.Size(123, 30);
             this.AddTrainee_button.TabIndex = 4;
-            this.AddTrainee_button.Text = "Добавить";
+            this.AddTrainee_button.Text = "➕ Добавить";
             this.AddTrainee_button.UseVisualStyleBackColor = false;
             this.AddTrainee_button.Click += new System.EventHandler(this.AddTrainee_button_Click);
             // 
