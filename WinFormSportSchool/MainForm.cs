@@ -60,12 +60,9 @@ namespace WinFormSportSchool
             if (currentForm != null)
             {
                 if (currentForm is MainInventoryForm inventoryForm) inventoryForm.SearchData(searchText);
-                /*if (currentForm is MainTraineeForm traineeForm)
-                    traineeForm.Se(searchText);
-                else if (currentForm is MainInstructorForm instructorForm)
-                    instructorForm.FilterData(searchText);
-                else if (currentForm is MainInventoryForm inventoryForm)
-                    inventoryForm.FilterData(searchText);*/
+                else if (currentForm is MainTraineeForm traineeForm) traineeForm.SearchData(searchText);
+                else if (currentForm is MainInstructorForm instructorForm) instructorForm.SearchData(searchText);
+                else if (currentForm is ArchiveForm archiveForm) archiveForm.SearchData(searchText);
             }
         }
         private void ShowFormInWorkArea(Form form)

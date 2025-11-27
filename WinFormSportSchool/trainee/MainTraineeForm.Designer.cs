@@ -90,6 +90,7 @@ namespace WinFormSportSchool
             this.tableListTrainees_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableListTrainees_dataGridView.Size = new System.Drawing.Size(1237, 549);
             this.tableListTrainees_dataGridView.TabIndex = 3;
+            this.tableListTrainees_dataGridView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tableListTrainees_dataGridView_MouseDown);
             // 
             // iconBox
             // 

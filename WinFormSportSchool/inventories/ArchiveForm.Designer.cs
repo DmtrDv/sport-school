@@ -69,6 +69,7 @@
             this.archive_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.archive_dataGridView.Size = new System.Drawing.Size(1131, 558);
             this.archive_dataGridView.TabIndex = 0;
+            this.archive_dataGridView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.archive_dataGridView_MouseDown);
             // 
             // back_button
             // 

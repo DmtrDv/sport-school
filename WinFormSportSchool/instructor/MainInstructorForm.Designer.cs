@@ -72,6 +72,7 @@
             this.InstructorsList_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.InstructorsList_dataGridView.Size = new System.Drawing.Size(1101, 533);
             this.InstructorsList_dataGridView.TabIndex = 1;
+            this.InstructorsList_dataGridView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.InstructorsList_dataGridView_MouseDown);
             // 
             // contextMenuStrip1
             // 

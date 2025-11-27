@@ -39,7 +39,7 @@ namespace WinFormSportSchool.inventories
         public void SearchData(string searchText)
         {
             InventoryList_dataGridView.CurrentCell = null;
-            int[] searchColumn = { 1, 2};
+            int[] searchColumn = { 1, 2 };
             foreach (DataGridViewRow row in InventoryList_dataGridView.Rows)
             {
                 bool found = false;
