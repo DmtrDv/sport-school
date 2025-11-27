@@ -56,7 +56,7 @@ namespace WinFormSportSchool
             if (currentForm != null)
             {
                 currentForm.Close();
-                currentForm.Dispose();
+                currentForm.Dispose(); //освобождает ресурсы
             }
 
             // Настраиваем новую форму
