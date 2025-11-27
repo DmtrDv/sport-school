@@ -47,7 +47,7 @@ namespace WinFormSportSchool
             this.AddTrainee_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
             this.AddTrainee_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
             this.AddTrainee_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.AddTrainee_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddTrainee_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddTrainee_button.Location = new System.Drawing.Point(13, 14);
             this.AddTrainee_button.Margin = new System.Windows.Forms.Padding(4);
             this.AddTrainee_button.Name = "AddTrainee_button";

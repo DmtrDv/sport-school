@@ -85,7 +85,7 @@
             this.Add_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
             this.Add_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(224)))));
             this.Add_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Add_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Add_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Add_button.Location = new System.Drawing.Point(13, 15);
             this.Add_button.Margin = new System.Windows.Forms.Padding(5);
             this.Add_button.Name = "Add_button";
@@ -100,7 +100,7 @@
             this.Edit_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(218)))), ((int)(((byte)(164)))));
             this.Edit_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(129)))));
             this.Edit_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Edit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Edit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Edit_button.Location = new System.Drawing.Point(193, 15);
             this.Edit_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Edit_button.Name = "Edit_button";
@@ -115,7 +115,7 @@
             this.WriteOff_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(167)))));
             this.WriteOff_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(164)))), ((int)(((byte)(167)))));
             this.WriteOff_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.WriteOff_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WriteOff_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WriteOff_button.Location = new System.Drawing.Point(373, 15);
             this.WriteOff_button.Margin = new System.Windows.Forms.Padding(4);
             this.WriteOff_button.Name = "WriteOff_button";
@@ -131,7 +131,7 @@
             this.Archive_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
             this.Archive_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
             this.Archive_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Archive_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Archive_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Archive_button.Location = new System.Drawing.Point(1125, 15);
             this.Archive_button.Margin = new System.Windows.Forms.Padding(4);
             this.Archive_button.Name = "Archive_button";
