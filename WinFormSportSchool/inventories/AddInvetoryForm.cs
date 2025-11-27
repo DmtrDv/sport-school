@@ -34,6 +34,8 @@ namespace WinFormSportSchool.inventories
             string res = inventoryManager_.AddInventory(inventory);
             if (res == "Новая запись успешно добавлена")
             {
+                MessageBox.Show(res, "Сообщение",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();
             }

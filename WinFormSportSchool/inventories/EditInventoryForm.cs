@@ -36,6 +36,8 @@ namespace WinFormSportSchool.inventories
             string res = inventoryManager_.UpdateInventory(editingInventory_); //если результат корректный, то сохраняем его и передаём значение DialogResult == OK
             if (res == "Запись успешно обновлена")
             {
+                MessageBox.Show(res, "Сообщение",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();
             }

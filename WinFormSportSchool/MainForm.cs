@@ -17,6 +17,7 @@ namespace WinFormSportSchool
         public MainForm()
         {
             InitializeComponent();
+            FindOf_textBox.TextChanged += FindOf_textBox_TextChanged;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -46,9 +47,23 @@ namespace WinFormSportSchool
         private void ClearWindows_button_Click(object sender, EventArgs e)
         {
             this.workArea_panel.Controls.Clear();
+            currentForm = null;
             FindOf_label.Enabled = false;
             FindOf_textBox.Enabled = false;
             this.Text = "Спортивная школа";
+            FindOf_textBox.Text = "";
+        }
+        private void FindOf_textBox_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = FindOf_textBox.Text.Trim();
+
+            if (currentForm != null)
+            {
+                if (currentForm is MainInventoryForm inventoryForm) inventoryForm.SearchData(searchText);
+                else if (currentForm is MainTraineeForm traineeForm) traineeForm.SearchData(searchText);
+                else if (currentForm is MainInstructorForm instructorForm) instructorForm.SearchData(searchText);
+                else if (currentForm is ArchiveForm archiveForm) archiveForm.SearchData(searchText);
+            }
         }
         private void ShowFormInWorkArea(Form form)
         {
@@ -56,7 +71,7 @@ namespace WinFormSportSchool
             if (currentForm != null)
             {
                 currentForm.Close();
-                currentForm.Dispose();
+                currentForm.Dispose(); //освобождает ресурсы
             }
 
             // Настраиваем новую форму
@@ -76,7 +91,13 @@ namespace WinFormSportSchool
             
             FindOf_label.Enabled = true;
             FindOf_textBox.Enabled = true;
+            FindOf_textBox.Text = "";
 
+        }
+
+        private void ClearSearch_button_Click(object sender, EventArgs e)
+        {
+            FindOf_textBox.Text = "";
         }
     }
 }

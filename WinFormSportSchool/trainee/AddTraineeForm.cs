@@ -42,6 +42,8 @@ namespace WinFormSportSchool
             string res = traineeDBManager.AddTrainee(NTrainee);
             if (res == "Ученик успешно добавлен")
             {
+                MessageBox.Show(res, "Сообщение",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
                 NewTrainee = NTrainee;
                 DialogResult = DialogResult.OK;
                 Close();

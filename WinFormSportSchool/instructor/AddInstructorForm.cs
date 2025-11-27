@@ -38,6 +38,8 @@ namespace WinFormSportSchool
             string res = instructorManager_.AddInstructor(instructor);
             if (res == "Новый тренер успешно добавлен")
             {
+                MessageBox.Show(res, "Сообщение",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();
             }
