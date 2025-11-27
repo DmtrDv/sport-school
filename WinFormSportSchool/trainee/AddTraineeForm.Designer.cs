@@ -108,6 +108,7 @@
             // 
             this.DateBirthday_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DateBirthday_dateTimePicker.Location = new System.Drawing.Point(173, 38);
+            this.DateBirthday_dateTimePicker.MaxDate = System.DateTime.Today;
             this.DateBirthday_dateTimePicker.Name = "DateBirthday_dateTimePicker";
             this.DateBirthday_dateTimePicker.Size = new System.Drawing.Size(366, 24);
             this.DateBirthday_dateTimePicker.TabIndex = 7;

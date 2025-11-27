@@ -44,6 +44,7 @@
             this.DateDelivery_dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DateDelivery_dateTimePicker.Location = new System.Drawing.Point(140, 79);
             this.DateDelivery_dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DateDelivery_dateTimePicker.MaxDate = System.DateTime.Today;
             this.DateDelivery_dateTimePicker.Name = "DateDelivery_dateTimePicker";
             this.DateDelivery_dateTimePicker.Size = new System.Drawing.Size(299, 24);
             this.DateDelivery_dateTimePicker.TabIndex = 15;
