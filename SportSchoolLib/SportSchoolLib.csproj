@@ -110,6 +110,7 @@
     <Compile Include="Inventories\Inventory.cs" />
     <Compile Include="Inventories\InventoryManager.cs" />
     <Compile Include="Inventories\SQLInventoryManager.cs" />
+    <Compile Include="SqlReports.cs" />
     <Compile Include="Trainees\IStorageTrainee.cs" />
     <Compile Include="Trainees\ITraineeModel.cs" />
     <Compile Include="Trainees\SQLTraineeManager.cs" />

@@ -39,6 +39,7 @@
             this.instructor_button = new System.Windows.Forms.Button();
             this.trainee_button = new System.Windows.Forms.Button();
             this.workArea_panel = new System.Windows.Forms.Panel();
+            this.Report_button = new System.Windows.Forms.Button();
             this.ClearSearch_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainConteiner_splitContainer)).BeginInit();
             this.MainConteiner_splitContainer.Panel1.SuspendLayout();
@@ -67,6 +68,7 @@
             // navigation_panel
             // 
             this.navigation_panel.BackColor = System.Drawing.Color.LightGray;
+            this.navigation_panel.Controls.Add(this.Report_button);
             this.navigation_panel.Controls.Add(this.ClearSearch_button);
             this.navigation_panel.Controls.Add(this.ClearWindows_button);
             this.navigation_panel.Controls.Add(this.FindOf_textBox);
@@ -87,7 +89,7 @@
             this.ClearWindows_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ClearWindows_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ClearWindows_button.Location = new System.Drawing.Point(4, 249);
+            this.ClearWindows_button.Location = new System.Drawing.Point(4, 285);
             this.ClearWindows_button.Name = "ClearWindows_button";
             this.ClearWindows_button.Size = new System.Drawing.Size(170, 30);
             this.ClearWindows_button.TabIndex = 6;
@@ -103,7 +105,7 @@
             this.FindOf_textBox.Enabled = false;
             this.FindOf_textBox.Location = new System.Drawing.Point(4, 28);
             this.FindOf_textBox.Name = "FindOf_textBox";
-            this.FindOf_textBox.Size = new System.Drawing.Size(148, 27);
+            this.FindOf_textBox.Size = new System.Drawing.Size(148, 23);
             this.FindOf_textBox.TabIndex = 5;
             this.FindOf_textBox.TextChanged += new System.EventHandler(this.FindOf_textBox_TextChanged);
             // 
@@ -113,7 +115,7 @@
             this.FindOf_label.Enabled = false;
             this.FindOf_label.Location = new System.Drawing.Point(3, 9);
             this.FindOf_label.Name = "FindOf_label";
-            this.FindOf_label.Size = new System.Drawing.Size(60, 20);
+            this.FindOf_label.Size = new System.Drawing.Size(48, 17);
             this.FindOf_label.TabIndex = 4;
             this.FindOf_label.Text = "Поиск";
             // 
@@ -181,6 +183,20 @@
             this.workArea_panel.Size = new System.Drawing.Size(1142, 666);
             this.workArea_panel.TabIndex = 0;
             // 
+            // Report_button
+            // 
+            this.Report_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Report_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Report_button.Location = new System.Drawing.Point(4, 213);
+            this.Report_button.Name = "Report_button";
+            this.Report_button.Size = new System.Drawing.Size(170, 30);
+            this.Report_button.TabIndex = 8;
+            this.Report_button.Text = "📄    Отчёт";
+            this.Report_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Report_button.UseVisualStyleBackColor = true;
+            this.Report_button.Click += new System.EventHandler(this.Report_button_Click);
+            // 
             // ClearSearch_button
             // 
             this.ClearSearch_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -195,7 +211,7 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1322, 666);
             this.Controls.Add(this.MainConteiner_splitContainer);
@@ -229,5 +245,6 @@
         private System.Windows.Forms.Label FindOf_label;
         private System.Windows.Forms.Button ClearWindows_button;
         private System.Windows.Forms.Button ClearSearch_button;
+        private System.Windows.Forms.Button Report_button;
     }
 }

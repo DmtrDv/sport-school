@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormSportSchool.inventories;
+using WinFormSportSchool.reports;
 
 namespace WinFormSportSchool
 {
@@ -52,6 +53,12 @@ namespace WinFormSportSchool
             FindOf_textBox.Enabled = false;
             this.Text = "Спортивная школа";
             FindOf_textBox.Text = "";
+        }
+        private void Report_button_Click(object sender, EventArgs e)
+        {
+            ShowFormInWorkArea(new ReportsForm());
+            FindOf_label.Enabled = false;
+            FindOf_textBox.Enabled = false;
         }
         private void FindOf_textBox_TextChanged(object sender, EventArgs e)
         {
@@ -99,5 +106,6 @@ namespace WinFormSportSchool
         {
             FindOf_textBox.Text = "";
         }
+
     }
 }
